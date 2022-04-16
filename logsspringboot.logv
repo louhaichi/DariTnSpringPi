@@ -20,3 +20,26 @@
 2022-04-16 22:06:10.352  WARN 14536 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2022-04-16 22:06:11.134  INFO 14536 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2022-04-16 22:06:11.841  INFO 14536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-04-16 22:06:12.277  INFO 14536 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 18.938 seconds (JVM running for 23.877)
+2022-04-16 22:17:46.508  INFO 14536 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-16 22:17:46.512  INFO 14536 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-16 22:17:46.685  INFO 14536 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-16 22:17:46.892  INFO 14536 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 1.8.0_60 on DESKTOP-GBT86BQ with PID 14536 (C:\Spring\DariTnSpringPi-main\target\classes started by dell in C:\Spring\DariTnSpringPi-main)
+2022-04-16 22:17:46.893  INFO 14536 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-04-16 22:17:47.161  INFO 14536 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-16 22:17:47.173  INFO 14536 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2022-04-16 22:17:47.288  INFO 14536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-04-16 22:17:47.288  INFO 14536 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-16 22:17:47.289  INFO 14536 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-16 22:17:47.384  INFO 14536 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-04-16 22:17:47.384  INFO 14536 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 489 ms
+2022-04-16 22:17:47.412  INFO 14536 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-16 22:17:47.416  INFO 14536 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-04-16 22:17:47.420  INFO 14536 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-04-16 22:17:47.420  INFO 14536 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-04-16 22:17:48.943  INFO 14536 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-16 22:17:48.943  INFO 14536 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-16 22:17:49.054  WARN 14536 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-16 22:17:49.092  INFO 14536 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-16 22:17:49.171  INFO 14536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-04-16 22:17:49.330  INFO 14536 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 2.461 seconds (JVM running for 720.931)
