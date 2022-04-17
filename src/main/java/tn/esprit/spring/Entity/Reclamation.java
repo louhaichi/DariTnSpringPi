@@ -1,6 +1,7 @@
 package tn.esprit.spring.Entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -27,13 +28,18 @@ public class Reclamation implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Long idReclamation;
+	Long id;
+	String titre;
 	String Sujet ;
-	@Temporal(TemporalType.DATE)
-	Date dateReclamation;
-	Long idAdmin;
+	
+	LocalDate date;
+	//@ManyToOne
+	//User admin;
 	String reponse;
 	
-	@ManyToOne
-	User user;
+	
+	
+	//@ManyToOne
+	//User user;
+	
 }

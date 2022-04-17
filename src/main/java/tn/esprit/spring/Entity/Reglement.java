@@ -31,9 +31,9 @@ public class Reglement implements Serializable {
 	String remarque;
 	ModeDePaiement modeDePaiment ;
 	
-	@JsonIgnore
-	@OneToOne(mappedBy="reglement")
-	private Mobilier mobilier ;
+	//@JsonIgnore
+	//@OneToOne(mappedBy="reglement")
+	//private Mobilier mobilier ;
 
 }
 

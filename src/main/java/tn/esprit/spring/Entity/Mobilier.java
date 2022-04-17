@@ -1,6 +1,7 @@
 package tn.esprit.spring.Entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -28,25 +29,32 @@ public class Mobilier implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Long idMobiler;
-    String Titre ;
-	float Prix;
+	Long id;
+    String titre ;
+    String description ;
+    
+    
+    String etatMobilier;
+    LocalDate date;
+    
+	Long Prix;
+	
 	boolean status;
-	String Description ;
+	
 	Long idAchteur;
-	EtatMobilier etatMobilier;
-	
-	@ManyToOne
-	User user;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy="mobilier" ,cascade =CascadeType.ALL)
-	private Set<ImageVideo> imageVideo ;
 	
 	
-	@JsonIgnore
-	@OneToOne 
-	private Reglement reglement ;
+	//@ManyToOne
+	//User user;
+	
+	//@JsonIgnore
+	//@OneToMany(mappedBy="mobilier" ,cascade =CascadeType.ALL)
+	//private Set<ImageVideo> imageVideo ;
+	
+	
+	//@JsonIgnore
+	//@OneToOne 
+	//private Reglement reglement ;
 	
 	
 }

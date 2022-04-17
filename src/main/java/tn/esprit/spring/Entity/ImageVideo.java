@@ -29,9 +29,9 @@ public class ImageVideo implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long idImage;
     String Image ;    
-    @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
-	Mobilier mobilier; 
+   // @JsonIgnore
+    //@ManyToOne(cascade = CascadeType.ALL)
+	//Mobilier mobilier; 
 
 }
 

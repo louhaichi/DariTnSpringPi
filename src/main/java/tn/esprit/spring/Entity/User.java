@@ -47,11 +47,16 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Annonce> annonces;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	private Set<Mobilier> mobiliers;
+	//@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	//private Set<Mobilier> mobiliers;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	private Set<Reclamation> reclamations;
+	//@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	//private Set<Reclamation> reclamations;
+	
+	
+	//jdida
+	//@OneToMany(cascade = CascadeType.ALL, mappedBy="admin")
+	//private Set<Reclamation> reclamationsAdmin;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Sujet> sujets;
