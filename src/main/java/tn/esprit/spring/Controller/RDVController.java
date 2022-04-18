@@ -32,9 +32,10 @@ public class RDVController {
 	}
 	
 	// create RDV 
-	@PostMapping("/RDVs")
-	public RDV createRDV(@RequestBody RDV u) {
-		return RDVservice.saveRDV(u);
+	@PostMapping("/RDVs/{idUser}/{idAnnonce}")
+	public RDV createRDV(@RequestBody RDV u,@PathVariable("idUser") Long idUser,
+			@PathVariable("idAnnonce") Long idAnnonce) {
+		return RDVservice.saveRDV(u,idUser,idAnnonce);
 	}
 	
 	@GetMapping("/RDVs/{id}")
@@ -46,7 +47,8 @@ public class RDVController {
 	@PutMapping("/RDVs/{id}")
 	public ResponseEntity<RDV> updateRDV(@PathVariable Long id,@RequestBody RDV r){
 		RDV rdv = RDVservice.getRDV(id);
-		rdv.setIdAnnonce(r.getIdAnnonce());
+		rdv.setAnnonce(r.getAnnonce());
+		
 		rdv.setDateRDV(r.getDateRDV());
 		rdv.setUser(r.getUser());
 		//UX.setPhotos(u.getPhotos());

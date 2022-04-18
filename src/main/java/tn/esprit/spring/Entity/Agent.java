@@ -1,5 +1,6 @@
 package tn.esprit.spring.Entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -21,13 +22,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Agent {
+public class Agent implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String nom;
 	private String prenom;
 	private int Telephone;
+	private int ventes,locations;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="agent")
 	private Set<Annonce> annonces;

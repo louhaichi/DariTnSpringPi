@@ -5,7 +5,7 @@ import java.util.List;
 import tn.esprit.spring.Entity.RDV;
 
 public interface RDVService {
-	RDV saveRDV(RDV u);
+	RDV saveRDV(RDV u,Long idUser,Long idAnno);
 	RDV updateRDV(RDV u);
 	void deleteRDV(RDV u);
 	 void deleteRDVById(Long id);
