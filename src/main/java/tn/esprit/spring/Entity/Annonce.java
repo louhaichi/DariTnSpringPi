@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,20 +36,29 @@ public class Annonce {
 	private String localisation;
 	private int nbchambre;
 	private double prix;
-	private Boolean disponibilité;
+	private Boolean disponibilite;
 	private double surface;
+	
+	@JsonIgnore
 	@OneToOne
 	private Coupon coupon;
 	
+	@JsonIgnore
 	@OneToOne
 	private DariRoom room;
 	
+	@JsonIgnore
 	@ManyToOne
 	User user;
+	
+	@JsonIgnore
+	@ManyToOne
+	User Acheteur;
 	
 	@ManyToOne 
 	Agent agent;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="annonce")
 	private Set<RDV> rdvs;
 	

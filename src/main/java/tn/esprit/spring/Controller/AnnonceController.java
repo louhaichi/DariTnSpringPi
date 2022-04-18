@@ -31,9 +31,9 @@ public class AnnonceController {
 		return annonceService.getAllAnnonces();
 		}
 	
-	@PostMapping("/AjoutAnnonce")
-	public Annonce AjoutAnnonce(@RequestBody Annonce A){
-		return annonceService.saveAnnonce(A);
+	@PostMapping("/AjoutAnnonce/{idUser}")
+	public Annonce AjoutAnnonce(@RequestBody Annonce A, @PathVariable("idUser") Long idUser){
+		return annonceService.saveAnnonce(A, idUser);
 		}
 	
 	@GetMapping("/AfficheAnnonce/{id}")
@@ -51,10 +51,27 @@ public class AnnonceController {
 		Ax.setPrix(A.getPrix());
 		Ax.setTitre(A.getTitre());
 		Ax.setSurface(A.getSurface());
-		Ax.setDisponibilité(A.getDisponibilité());
+		Ax.setDisponibilite(A.getDisponibilite());
 		Annonce updateAnnonce= annonceService.updateAnnonce(Ax);
 		return ResponseEntity.ok(updateAnnonce);
 		}
+	
+	@PutMapping("/AcheterAnnonce/{idAnnonce}/{idUser}")
+	public void acheterAnnonce(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idUser") Long idUser) {
+		annonceService.acheterAnnonce(idAnnonce, idUser);
+		
+	}
+	
+	@PutMapping("/AffecterCoupon/{idAnnonce}/{idCoupon}")
+	public void AffecterCoupon(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idCoupon") Long idCoupon) {
+		annonceService.AffecterAnnonce(idAnnonce, idCoupon);
+		
+	}
+		
+	@PutMapping("/AffecterAgent/{idAnnonce}/{idAgent}")
+	public void AffecterAgent(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idAgent") Long idAgent) {
+		annonceService.affecterAgent(idAnnonce, idAgent);
+	}
 }
 
 

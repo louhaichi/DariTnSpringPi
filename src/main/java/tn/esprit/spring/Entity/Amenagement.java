@@ -29,6 +29,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Amenagement implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long idAmenagement;

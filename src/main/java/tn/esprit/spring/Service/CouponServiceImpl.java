@@ -1,21 +1,31 @@
 package tn.esprit.spring.Service;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entity.Coupon;
+import tn.esprit.spring.Entity.User;
 import tn.esprit.spring.Repository.CouponRepository;
+import tn.esprit.spring.Repository.UserRepository;
 
 @Service
 public class CouponServiceImpl implements CouponService {
 	
 	@Autowired
 	CouponRepository couponRepository;
+	@Autowired
+	UserRepository userRepo;
+	
 	@Override
-	public Coupon saveCoupon(Coupon c) {
+	public Coupon saveCoupon(Coupon c, Long idUser) {
 		
+		User u = userRepo.findById(idUser).orElseThrow(null);
+		c.setUser(u);	
+		c.setEtat(true);
+		c.setCode(CodeCoupon());
 		return couponRepository.save(c);
 	}
 
@@ -50,5 +60,20 @@ public class CouponServiceImpl implements CouponService {
 		
 		return couponRepository.findAll();
 	}
+	
+	// generer un code coupon alpha numerique de 100 caracteres
+		public String CodeCoupon() {
+		    int leftLimit = 48; // numeral '0'
+		    int rightLimit = 122; // letter 'z'
+		    int targetStringLength = 100;
+		    Random random = new Random();
 
+		    String generatedString = random.ints(leftLimit, rightLimit + 1)
+		      .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+		      .limit(targetStringLength)
+		      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+		      .toString();
+
+		    return generatedString;
+		}
 }

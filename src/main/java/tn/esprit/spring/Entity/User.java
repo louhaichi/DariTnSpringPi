@@ -1,4 +1,5 @@
 package tn.esprit.spring.Entity;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,7 +24,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User implements Serializable  {
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,6 +37,7 @@ public class User {
 	private String mdp;
 	private Boolean etat;
 	
+		
 	@Enumerated(EnumType.STRING)
 	private TypeUser type;
 	
@@ -46,6 +49,9 @@ public class User {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Annonce> annonces;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="Acheteur")
+	private Set<Annonce> MesBiens;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Mobilier> mobiliers;
@@ -64,4 +70,7 @@ public class User {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Messagerie> messages;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	private Set<Coupon> Coupons;
 }

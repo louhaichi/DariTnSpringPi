@@ -33,9 +33,9 @@ public class CouponController {
 		return couponService.getAllCoupons();
 		}
 	
-	@PostMapping("/AjoutCoupon")
-	public Coupon ajoutCoupon(@RequestBody Coupon c){
-		return couponService.saveCoupon(c);
+	@PostMapping("/AjoutCoupon/{idUser}")
+	public Coupon ajoutCoupon( Coupon c , @PathVariable Long idUser){
+		return couponService.saveCoupon(c,idUser);
 		}
 	
 	@GetMapping("/AfficheCoupon/{id}")
