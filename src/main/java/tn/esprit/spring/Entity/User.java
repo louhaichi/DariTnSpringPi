@@ -1,6 +1,7 @@
 package tn.esprit.spring.Entity;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,6 +12,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.*;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,15 +34,19 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private long cin;
-	private String nom;
-	private String prenom;
+	private String username;
 	private String email;
 	private String mdp;
 	private Boolean etat;
+	private long telephone;
 	
-	@Enumerated(EnumType.STRING)
-	private TypeUser type;
+	
+	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name="user_role",joinColumns = @JoinColumn(name="id") ,
+	 inverseJoinColumns = @JoinColumn(name="role_id"))
+	private List<Role> roles;
+	
+	
 	
 	@Column(nullable = true, length = 64)
 	private String photos;

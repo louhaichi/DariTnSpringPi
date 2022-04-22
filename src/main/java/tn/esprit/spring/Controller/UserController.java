@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Entity.User;
@@ -24,6 +25,9 @@ public class UserController {
 	
 	@Autowired
 	private UserService Userservice;
+	
+	@Autowired
+	private UserRepository userRepo;
 	
 	// get all users 
 	@GetMapping("/users")
@@ -48,9 +52,7 @@ public class UserController {
 	public ResponseEntity<User> updateUser(@PathVariable Long id,@RequestBody User u){
 		User UX = Userservice.getUser(id);
 		
-		UX.setCin(u.getCin());
-		UX.setNom(u.getNom());
-		UX.setPrenom(u.getPrenom());
+		
 		UX.setEmail(u.getEmail());
 		UX.setMdp(u.getMdp());
 		UX.setEtat(u.getEtat());
@@ -58,4 +60,11 @@ public class UserController {
 		User updateUser = Userservice.updateUser(UX);
 		return ResponseEntity.ok(updateUser);
 	}
+	
+	@RequestMapping(value ="/login/{username}",method = RequestMethod.GET)
+	public User getUserByUsernamePassword(@PathVariable("username") String
+	username) {
+	return userRepo.findByUsername(username);
+	}
+
 }
