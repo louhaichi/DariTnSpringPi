@@ -42,9 +42,11 @@ public class Annonce {
 	private double longitude;
 	
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy="annonce" ,cascade =CascadeType.ALL)
-	private Set<ImageVideo> imageVideo ;
+	private Set<FileDB> files ;
+	
+	
 	
 	@JsonIgnore
 	@OneToOne
