@@ -17,10 +17,6 @@ class DariTnApplicationTests {
 	void contextLoads() {
 	}
 	
-	@Test
-	void Testuser() {
-		User u=ur.findByUsername("firas99");
-		System.out.println(u.getRoles());
-	}
+	
 	
 }
