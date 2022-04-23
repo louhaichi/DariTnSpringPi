@@ -38,6 +38,13 @@ public class Annonce {
 	private double prix;
 	private Boolean disponibilite;
 	private double surface;
+	private double latitude;
+	private double longitude;
+	
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="annonce" ,cascade =CascadeType.ALL)
+	private Set<ImageVideo> imageVideo ;
 	
 	@JsonIgnore
 	@OneToOne
@@ -54,7 +61,7 @@ public class Annonce {
 	@JsonIgnore
 	@ManyToOne
 	User Acheteur;
-	
+	@JsonIgnore
 	@ManyToOne 
 	Agent agent;
 	
