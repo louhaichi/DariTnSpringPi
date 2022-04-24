@@ -33,7 +33,6 @@ public class UserController {
 	
 	// get all users 
 	@GetMapping("/users")
-	  @PreAuthorize("hasRole('USER')")
 	public List<User> getAllUsers(){
 		return Userservice.getAllUsers();
 		
@@ -45,9 +44,9 @@ public class UserController {
 		return Userservice.saveUser(u);
 	}
 	
-	@GetMapping("/users/{id}")
-	public ResponseEntity<User> getUserById(@PathVariable Long id) {
-		User u =Userservice.getUser(id);
+	@GetMapping("/users/{username}")
+	public ResponseEntity<User> getUserById(@PathVariable String username) {
+		User u =Userservice.getUserByUsername(username);
 		return ResponseEntity.ok(u);
 	}
 	

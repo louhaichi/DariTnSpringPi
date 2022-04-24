@@ -65,13 +65,13 @@ public class User implements Serializable {
 	  private Set<Role> roles = new HashSet<>();
 	
 	private long telephone;
-	
+	@JsonIgnore
 	@Column(nullable = true, length = 64)
 	private String photos;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<RDV> RDVS;
-	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Coupon> coupons;
 	@JsonIgnore
