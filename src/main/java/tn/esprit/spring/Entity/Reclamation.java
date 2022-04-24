@@ -27,7 +27,7 @@ import lombok.ToString;
 public class Reclamation implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue
 	Long id;
 	String titre;
 	String Sujet ;

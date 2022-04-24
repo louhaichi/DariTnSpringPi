@@ -5,7 +5,10 @@ import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,23 +37,29 @@ public class Mobilier implements Serializable {
     String titre ;
     String description ;
     
-    
-    String etatMobilier;
+    @Enumerated(EnumType.STRING)
+    EtatMobilier etatMobilier;
     LocalDate date;
     
-	Long Prix;
+	double prix;
 	
-	boolean status;
+	@Column(columnDefinition="tinyint(1) default 1")
+	boolean status = true;
 	
-	Long idAchteur;
+	
+	@ManyToOne
+	@JsonIgnoreProperties({"mobiliersAchteur", "mobiliersVendeur"})
+	User achteur;
 	
 	
-	//@ManyToOne
-	//User user;
+	@ManyToOne
+	@JsonIgnoreProperties({"mobiliersAchteur", "mobiliersVendeur"})
+	User vendeur;
 	
 	//@JsonIgnore
-	//@OneToMany(mappedBy="mobilier" ,cascade =CascadeType.ALL)
-	//private Set<ImageVideo> imageVideo ;
+	@OneToMany(mappedBy="mobilier",cascade =CascadeType.REMOVE)
+	@JsonIgnoreProperties("mobilier")
+	private Set<ImageVideo> imageVideo ;
 	
 	
 	//@JsonIgnore
