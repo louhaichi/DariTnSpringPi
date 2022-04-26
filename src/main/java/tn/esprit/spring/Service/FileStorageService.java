@@ -19,15 +19,14 @@ public class FileStorageService {
 	@Autowired
 	  private AnnonceRepository annonceRepository;
 
-	  public FileDB store(MultipartFile file,Long idAnnonce) throws IOException {
-	    Annonce annoncefile=annonceRepository.findById(idAnnonce).orElse(null);
-	  
+	public FileDB store(MultipartFile file) throws IOException {
+	    Annonce annoncefile=annonceRepository.findById((long) annonceRepository.LastID()).orElse(null);
+	  System.out.println("annonceid"+annonceRepository.LastID());
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 	    FileDB FileDB = new FileDB(fileName, file.getContentType(), file.getBytes(), annoncefile);
 
 	    return fileDBRepository.save(FileDB);
 	  }
-
 	  public FileDB getFile(String id) {
 	    return fileDBRepository.findById(id).get();
 	  }

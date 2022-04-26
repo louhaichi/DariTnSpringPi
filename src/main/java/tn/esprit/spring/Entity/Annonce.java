@@ -38,12 +38,12 @@ public class Annonce {
 	private double prix;
 	private Boolean disponibilite;
 	private double surface;
-	private double latitude;
-	private double longitude;
+	@Enumerated(EnumType.STRING)
+	private TypeAnnonce typeAnnonce;
 	
 	
-	
-	@OneToMany(mappedBy="annonce" ,cascade =CascadeType.ALL)
+	@JsonIgnore
+	@OneToMany(mappedBy="annonce" ,cascade =CascadeType.REMOVE)
 	private Set<FileDB> files ;
 	
 	
@@ -71,8 +71,8 @@ public class Annonce {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="annonce")
 	private Set<RDV> rdvs;
 	
-	@Enumerated(EnumType.STRING)
-	private TypeAnnonce typeAnnonce;
+	
+	
 	
 	
 }

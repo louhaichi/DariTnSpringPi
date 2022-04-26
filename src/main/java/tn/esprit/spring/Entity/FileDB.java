@@ -1,4 +1,5 @@
 package tn.esprit.spring.Entity;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class FileDB {
 	  @Lob
 	  private byte[] data;
 	  
-	  @ManyToOne
+	  @ManyToOne(cascade = CascadeType.ALL)
 	  Annonce annonce;
 
 	  public FileDB() {
