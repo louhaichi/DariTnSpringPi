@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Entity.Annonce;
+import tn.esprit.spring.Repository.AnnonceRepository;
 import tn.esprit.spring.Service.AnnonceService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -27,6 +28,9 @@ public class AnnonceController {
 
 	@Autowired
 	private AnnonceService annonceService;
+	
+	@Autowired
+	private AnnonceRepository AR;
 	
 	@GetMapping("/AfficheAnnonce")
 	public List<Annonce> AfficheAnnonce (){
@@ -54,6 +58,7 @@ public class AnnonceController {
 		Ax.setTitre(A.getTitre());
 		Ax.setSurface(A.getSurface());
 		Ax.setDisponibilite(A.getDisponibilite());
+		Ax.setTypeAnnonce(A.getTypeAnnonce());
 		Annonce updateAnnonce= annonceService.updateAnnonce(Ax);
 		return ResponseEntity.ok(updateAnnonce);
 		}
@@ -81,6 +86,14 @@ public class AnnonceController {
 	{
 		annonceService.deleteAnnonceById(idAnnonce);
 	}
+	
+	@GetMapping("/AS/{idAnnonce}")
+	public  List<Annonce>  AnnonceSimilaires(@PathVariable Long idAnnonce){
+		Annonce A= annonceService.getAnnonce(idAnnonce) ;
+		System.out.println(A.getTypeAnnonce());
+	return AR.AnnonceSimilaires(A.getLocalisation(),A.getPrix(),A.getNbchambre(),A.getTypeAnnonce().toString(),A.getId());
+	}
+	
 }
 
 

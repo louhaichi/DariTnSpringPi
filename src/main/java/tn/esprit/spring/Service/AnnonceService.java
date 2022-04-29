@@ -14,4 +14,5 @@ public interface AnnonceService  {
 	Annonce getAnnonce(Long id);
 	void AffecterAnnonce(Long idAnnonce, Long idCoupon);
 	List<Annonce> getAllAnnonces();
+	
 }
