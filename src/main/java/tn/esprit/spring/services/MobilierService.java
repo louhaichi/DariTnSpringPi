@@ -1,6 +1,7 @@
 package tn.esprit.spring.services;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,5 +58,9 @@ public class MobilierService implements IMobilierService {
 	public void removeMobilier(Long id) {
 		mobilierRepository.deleteById(id);
 		
+	}
+
+	public  List<Object[]>  findMobilierVenduByDate(){
+		return mobilierRepository.findAllByStatusFalseAndGroupByLocalDate();
 	}
 }

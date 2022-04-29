@@ -1,5 +1,7 @@
 package tn.esprit.spring.controller;
 
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ import tn.esprit.spring.interfaces.IMobilierService;
 @RequestMapping("/Mobilier")
 @CrossOrigin("*")
 public class MobilierController {
+
 	@Autowired 
 	IMobilierService  iMobilierService ;
 	
@@ -68,5 +71,10 @@ public class MobilierController {
 		{
 			iMobilierService.removeMobilier(idMobilier);
 		}
+
+		@GetMapping("vendu")
+	public  List<Object[]>  findMobilierVenduByDate(){
+		return iMobilierService.findMobilierVenduByDate();
+	}
 
 }

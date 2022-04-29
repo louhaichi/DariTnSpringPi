@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -47,19 +49,21 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Annonce> annonces;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="vendeur")
+	@OneToMany( mappedBy="vendeur")
+	@JsonIgnoreProperties({"user", "reclamations"})
 	private Set<Mobilier> mobiliersVendeur;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="achteur")
+	@OneToMany( mappedBy="achteur")
+	@JsonIgnoreProperties({"user", "reclamations"})
 	private Set<Mobilier> mobiliersAchteur;
 	
-	//@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	//private Set<Reclamation> reclamations;
+	@OneToMany( mappedBy="user")
+	private Set<Reclamation> reclamations;
 	
 	
 	//jdida
-	//@OneToMany(cascade = CascadeType.ALL, mappedBy="admin")
-	//private Set<Reclamation> reclamationsAdmin;
+	@OneToMany( mappedBy="admin")
+	private Set<Reclamation> reclamationsAdmin;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Sujet> sujets;

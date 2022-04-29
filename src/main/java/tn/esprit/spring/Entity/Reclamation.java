@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,13 +34,17 @@ public class Reclamation implements Serializable{
 	String Sujet ;
 	
 	LocalDate date;
-	//@ManyToOne
-	//User admin;
+	
 	String reponse;
 	
 	
 	
-	//@ManyToOne
-	//User user;
+	@ManyToOne
+	@JsonIgnoreProperties({"reclamations", "reclamationsAdmin", "mobiliersVendeur", "mobiliersAchteur"})
+	User user;
+	
+	@ManyToOne
+	@JsonIgnoreProperties({"reclamations", "reclamationsAdmin"})
+	User admin;
 	
 }
