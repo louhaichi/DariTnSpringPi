@@ -1,5 +1,7 @@
 package tn.esprit.spring.Entity;
 
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,11 +23,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RDV {
+
+public class RDV implements Serializable{
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private long idAnnonce;
+
 	private Date dateRDV;
 	@ManyToOne
 	User user;

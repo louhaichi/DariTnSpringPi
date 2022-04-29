@@ -1,5 +1,7 @@
 package tn.esprit.spring.Entity;
 
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -15,6 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +31,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Annonce {
+
+public class Annonce implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -37,18 +44,24 @@ public class Annonce {
 	private double prix;
 	private Boolean disponibilité;
 	private double surface;
+
 	@OneToOne
 	private Coupon coupon;
 	
 	@OneToOne
 	private DariRoom room;
 	
+
+	@JsonIgnore
 	@ManyToOne
 	User user;
-	
+	@JsonIgnore
+	@ManyToOne
+	User Acheteur;
+	@JsonIgnore
 	@ManyToOne 
 	Agent agent;
-	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="annonce")
 	private Set<RDV> rdvs;
 	

@@ -2,6 +2,7 @@ package tn.esprit.spring.Entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,7 +46,7 @@ public class Reclamation implements Serializable{
 	User user;
 	
 	@ManyToOne
-	@JsonIgnoreProperties({"reclamations", "reclamationsAdmin"})
+	@JsonIgnoreProperties({"reclamations", "reclamationsAdmin", "mobiliersVendeur", "mobiliersAchteur"})
 	User admin;
-	
+
 }
