@@ -1,6 +1,7 @@
 package tn.esprit.spring.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import tn.esprit.spring.Entity.User;
 import tn.esprit.spring.Repository.AgentRepository;
 import tn.esprit.spring.Repository.AnnonceRepository;
 import tn.esprit.spring.Repository.CouponRepository;
+import tn.esprit.spring.Repository.ImageVideoRepository;
 import tn.esprit.spring.Repository.UserRepository;
 
 @Service
@@ -27,20 +29,37 @@ public class AnnonceServiceImpl  implements AnnonceService {
 	
 	@Autowired
 	CouponRepository couponRepo;
+	@Autowired
+	ImageVideoRepository imageVideoRepository;
 
 	@Override
 	public Annonce saveAnnonce(Annonce a, Long idUser ) {
 		User u = userRepo.findById(idUser).orElseThrow(null);
 		a.setUser(u);
 		a.setDisponibilite(true);
-		return annonceRepository.save(a);
+		
+		Annonce annonce = annonceRepository.save(a);
+		a.getImageVideo().forEach(i->i.setAnnonce(annonce));
+		System.out.println(a.getTitre());
+		
+		annonce.setImageVideo(imageVideoRepository.saveAll(a.getImageVideo()).stream().collect(Collectors.toSet()));
+		
+		
+		return annonce;
 		
 		
 	}
 
 	@Override
 	public Annonce updateAnnonce(Annonce a) {
-		return annonceRepository.save(a);
+		Annonce annonce = annonceRepository.save(a);
+		a.getImageVideo().forEach(i->i.setAnnonce(annonce));
+		
+		annonce.setImageVideo(imageVideoRepository.saveAll(a.getImageVideo()).stream().collect(Collectors.toSet()));
+		
+		
+		return annonce;
+		
 	}
 
 	@Override

@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,9 +43,10 @@ public class Annonce {
 	private TypeAnnonce typeAnnonce;
 	
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="annonce" ,cascade =CascadeType.REMOVE)
-	private Set<FileDB> files ;
+	//@JsonIgnore
+		@OneToMany(mappedBy="annonce",cascade =CascadeType.REMOVE)
+		@JsonIgnoreProperties("annonce")
+		private Set<ImageVideo> imageVideo ;
 	
 	
 	
