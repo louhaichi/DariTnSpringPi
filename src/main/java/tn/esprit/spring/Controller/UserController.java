@@ -51,14 +51,12 @@ public class UserController {
 	}
 	
 	@PutMapping("/users/{id}")
-	public ResponseEntity<User> updateUser(@PathVariable Long id,@RequestBody User u){
+	public ResponseEntity<User> updateUser(@PathVariable long id,@RequestBody User u){
 		User UX = Userservice.getUser(id);
 		
-		
+		UX.setUsername(u.getUsername());
 		UX.setEmail(u.getEmail());
-		UX.setPassword(u.getPassword());
-		
-		UX.setPhotos(u.getPhotos());
+		UX.setTelephone(u.getTelephone());
 		User updateUser = Userservice.updateUser(UX);
 		return ResponseEntity.ok(updateUser);
 	}

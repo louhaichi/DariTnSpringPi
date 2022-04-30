@@ -3,10 +3,12 @@ package tn.esprit.spring.Entity;
 import java.io.Serializable;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -27,11 +29,12 @@ public class ImageVideo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Long idImage;
-    String Image ;    
-    @JsonIgnore
+	Long id;
+	//trodoutext twiiiiiiil
+	@Column(columnDefinition = "LONGTEXT")
+    String image ;    
+   // @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
-	Mobilier mobilier; 
+	User user; 
 
 }
-

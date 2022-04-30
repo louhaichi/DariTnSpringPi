@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -42,19 +43,23 @@ public class Annonce implements Serializable{
 	private Boolean disponibilité;
 	private double surface;
 	
+	@JsonIgnore
 	@OneToOne
 	private Coupon coupon;
-	
+	@JsonIgnore
 	@OneToOne
 	private DariRoom room;
 	
-	@JsonIgnore
+
 	@ManyToOne
 	User user;
-	@JsonIgnore
+	
+
 	@ManyToOne
 	User Acheteur;
-	@JsonIgnore
+	
+	
+	
 	@ManyToOne 
 	Agent agent;
 	@JsonIgnore
@@ -63,6 +68,25 @@ public class Annonce implements Serializable{
 	
 	@Enumerated(EnumType.STRING)
 	private TypeAnnonce typeAnnonce;
+	
+	
+	@JsonBackReference(value="annonce")
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	@JsonBackReference(value="biens")
+	public User getAcheteur() {
+		return Acheteur;
+	}
+
+	public void setAcheteur(User acheteur) {
+		Acheteur = acheteur;
+	}
+	
 	
 	
 }

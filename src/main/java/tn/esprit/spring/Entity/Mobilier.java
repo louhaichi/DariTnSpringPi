@@ -39,9 +39,9 @@ public class Mobilier implements Serializable {
 	@ManyToOne
 	User user;
 	
-	@JsonIgnore
-	@OneToMany(mappedBy="mobilier" ,cascade =CascadeType.ALL)
-	private Set<ImageVideo> imageVideo ;
+	//@JsonIgnore
+	//@OneToMany(mappedBy="mobilier" ,cascade =CascadeType.ALL)
+	//private Set<ImageVideo> imageVideo ;
 	
 	
 	@JsonIgnore

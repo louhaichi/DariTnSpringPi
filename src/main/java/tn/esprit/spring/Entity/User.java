@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+ package tn.esprit.spring.Entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +16,10 @@ import javax.persistence.*;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +30,9 @@ import java.util.Set;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Getter
@@ -55,8 +61,10 @@ public class User implements Serializable {
 	  @Size(max = 120)
 	  private String password;
 	
-	
-	
+	//@JsonIgnore
+		@OneToMany(mappedBy="user",cascade =CascadeType.REMOVE)
+		@JsonIgnoreProperties("user")
+		private Set<ImageVideo> imageVideo ;
 	
 	@ManyToMany(fetch = FetchType.LAZY)
 	  @JoinTable(  name = "user_roles", 
@@ -65,21 +73,23 @@ public class User implements Serializable {
 	  private Set<Role> roles = new HashSet<>();
 	
 	private long telephone;
-	@JsonIgnore
-	@Column(nullable = true, length = 64)
+	
 	private String photos;
+	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<RDV> RDVS;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Coupon> coupons;
-	@JsonIgnore
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	private Set<Annonce> annonces;
-	@JsonIgnore
+	private List<Annonce> annonces;
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="Acheteur")
-	private Set<Annonce> MesBiens;
+	private List<Annonce> MesBiens;
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
@@ -105,6 +115,8 @@ public class User implements Serializable {
 	
 	 public User() {
 	  }
+	 
+	
 
 	  public User(String username, String email, String password,Long tel) {
 	    this.username = username;
@@ -152,6 +164,25 @@ public class User implements Serializable {
 	  public void setRoles(Set<Role> roles) {
 	    this.roles = roles;
 	  }
+	  
+	  @JsonManagedReference(value="annonce")
+	  public List<Annonce> getAnnonces() {
+			return annonces;
+		}
+
+		public void setAnnonces(List<Annonce> annonces) {
+			this.annonces = annonces;
+		}
+		  @JsonManagedReference(value="biens")
+		public List<Annonce> getMesBiens() {
+			return MesBiens;
+		}
+
+		public void setMesBiens(List<Annonce> mesBiens) {
+			MesBiens = mesBiens;
+		}
+	  
+	  
 	
 	
 }

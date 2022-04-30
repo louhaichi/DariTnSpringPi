@@ -1,8 +1,18 @@
 package tn.esprit.spring.payload.request;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Getter;
+import lombok.Setter;
+import tn.esprit.spring.Entity.ImageVideo;
+
+@Getter
+@Setter
 public class SignupRequest {
   @NotBlank
   @Size(min = 3, max = 20)
@@ -16,6 +26,12 @@ public class SignupRequest {
   private Set<String> role;
 
   private long telephone;
+  
+//@JsonIgnore
+		@OneToMany(mappedBy="user",cascade =CascadeType.REMOVE)
+		@JsonIgnoreProperties("user")
+		private Set<ImageVideo> imageVideo ;
+  
   
   public long getTelephone() {
 	return telephone;
