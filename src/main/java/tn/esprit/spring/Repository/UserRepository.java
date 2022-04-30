@@ -1,4 +1,4 @@
-package tn.esprit.spring.Repository;
+package tn.esprit.spring.repository;
 
 import java.util.Optional;
 

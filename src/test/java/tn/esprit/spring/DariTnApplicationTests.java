@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import tn.esprit.spring.Repository.AnnonceRepository;
-import tn.esprit.spring.Repository.UserRepository;
+import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.UserRepository;
 import tn.esprit.spring.Service.UserService;
 import tn.esprit.spring.Entity.User;
 

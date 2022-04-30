@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entity.Agent;
-import tn.esprit.spring.Repository.AgentRepository;
-import tn.esprit.spring.Repository.AnnonceRepository;
+import tn.esprit.spring.repository.AgentRepository;
+import tn.esprit.spring.repository.AnnonceRepository;
 
 @Service
 public class AgentServiceIMPL implements AgentService {

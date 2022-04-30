@@ -9,10 +9,10 @@ import tn.esprit.spring.Entity.Agent;
 import tn.esprit.spring.Entity.Annonce;
 import tn.esprit.spring.Entity.Coupon;
 import tn.esprit.spring.Entity.User;
-import tn.esprit.spring.Repository.AgentRepository;
-import tn.esprit.spring.Repository.AnnonceRepository;
-import tn.esprit.spring.Repository.CouponRepository;
-import tn.esprit.spring.Repository.UserRepository;
+import tn.esprit.spring.repository.AgentRepository;
+import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.CouponRepository;
+import tn.esprit.spring.repository.UserRepository;
 
 @Service
 public class AnnonceServiceImpl  implements AnnonceService {

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entity.User;
-import tn.esprit.spring.Repository.UserRepository;
+import tn.esprit.spring.repository.UserRepository;
 
 @Service
 public class UserServiceIMPL implements UserService {
