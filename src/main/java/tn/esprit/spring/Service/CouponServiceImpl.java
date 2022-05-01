@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.Entity.Coupon;
 import tn.esprit.spring.Entity.User;
-import tn.esprit.spring.repository.CouponRepository;
-import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.Repository.CouponRepository;
+import tn.esprit.spring.Repository.UserRepository;
 
 @Service
 public class CouponServiceImpl implements CouponService {

@@ -1,4 +1,4 @@
-package tn.esprit.spring.controller;
+package tn.esprit.spring.Controller;
 
 import java.util.HashSet;
 import java.util.List;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Entity.*;
 
-import tn.esprit.spring.repository.*;
+import tn.esprit.spring.Repository.*;
 import tn.esprit.spring.payload.request.*;
 import tn.esprit.spring.payload.response.*;
 import tn.esprit.spring.security.services.UserDetailsImpl;

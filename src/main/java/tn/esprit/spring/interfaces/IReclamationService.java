@@ -14,4 +14,7 @@ public interface IReclamationService {
 	Reclamation retrieveReclamation (Long id);
 	void removeReclamation (Long id);
 
+    List<Reclamation> findFixedReclamations();
+
+	List<Reclamation> saveAll(List<Reclamation> reclamations);
 }
