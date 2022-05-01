@@ -1,4 +1,4 @@
-package tn.esprit.spring.controller;
+package tn.esprit.spring.Controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.Entity.User;
-import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.Repository.UserRepository;
 import tn.esprit.spring.Service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
