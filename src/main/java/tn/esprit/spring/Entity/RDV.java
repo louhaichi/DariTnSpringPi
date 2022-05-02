@@ -1,9 +1,8 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,6 +29,7 @@ public class RDV implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
 
 	private Date dateRDV;
 	@ManyToOne

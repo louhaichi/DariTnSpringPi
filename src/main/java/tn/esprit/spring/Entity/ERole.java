@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 public enum ERole {
 	ROLE_USER,

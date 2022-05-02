@@ -3,8 +3,8 @@ package tn.esprit.spring.mail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import tn.esprit.spring.Entity.Reclamation;
-import tn.esprit.spring.Entity.ReclamationStatus;
+import tn.esprit.spring.entity.Reclamation;
+import tn.esprit.spring.entity.ReclamationStatus;
 import tn.esprit.spring.services.ReclamationService;
 
 import java.util.List;

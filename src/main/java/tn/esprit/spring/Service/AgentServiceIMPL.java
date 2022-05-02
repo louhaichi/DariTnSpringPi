@@ -1,13 +1,13 @@
-package tn.esprit.spring.Service;
+package tn.esprit.spring.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.Entity.Agent;
-import tn.esprit.spring.Repository.AgentRepository;
-import tn.esprit.spring.Repository.AnnonceRepository;
+import tn.esprit.spring.entity.Agent;
+import tn.esprit.spring.repository.AgentRepository;
+import tn.esprit.spring.repository.AnnonceRepository;
 
 @Service
 public class AgentServiceIMPL implements AgentService {
@@ -54,13 +54,15 @@ public class AgentServiceIMPL implements AgentService {
 
 	@Override
 	public int Vente(Long idAgent) {
-		
+
 		return AgentRepo.findById(idAgent).orElse(null).getVentes();
+
 	}
 
 	@Override
 	public int Location(Long idAgent) {
 		return AgentRepo.findById(idAgent).orElse(null).getLocations();
 	}
+
 	
 }

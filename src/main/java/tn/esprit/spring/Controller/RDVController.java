@@ -1,4 +1,4 @@
-package tn.esprit.spring.Controller;
+package tn.esprit.spring.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.spring.Entity.RDV;
-import tn.esprit.spring.Service.RDVService;
+import tn.esprit.spring.entity.RDV;
+import tn.esprit.spring.service.RDVService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -36,6 +36,7 @@ public class RDVController {
 	public RDV createRDV(@RequestBody RDV u,@PathVariable("idUser") Long idUser,
 			@PathVariable("idAnnonce") Long idAnnonce) {
 		return RDVservice.saveRDV(u,idUser,idAnnonce);
+
 	}
 	
 	@GetMapping("/RDVs/{id}")
@@ -48,7 +49,7 @@ public class RDVController {
 	public ResponseEntity<RDV> updateRDV(@PathVariable Long id,@RequestBody RDV r){
 		RDV rdv = RDVservice.getRDV(id);
 		rdv.setAnnonce(r.getAnnonce());
-		
+
 		rdv.setDateRDV(r.getDateRDV());
 		rdv.setUser(r.getUser());
 		//UX.setPhotos(u.getPhotos());

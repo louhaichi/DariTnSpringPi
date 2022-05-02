@@ -1,8 +1,8 @@
-package tn.esprit.spring.Service;
+package tn.esprit.spring.service;
 
 import java.util.List;
 
-import tn.esprit.spring.Entity.User;
+import tn.esprit.spring.entity.User;
 
 public interface UserService {
 	User saveUser(User u);
@@ -12,5 +12,6 @@ public interface UserService {
 	User getUserByUsername(String username);
 	User getUser(Long id);
 	
+
 	List<User> getAllUsers();
 }

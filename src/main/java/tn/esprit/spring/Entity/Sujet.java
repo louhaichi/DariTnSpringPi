@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -17,8 +17,6 @@ import java.lang.String;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

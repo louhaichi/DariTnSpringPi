@@ -1,14 +1,15 @@
 package tn.esprit.spring;
 
 import org.junit.jupiter.api.Test;
+<<<<<<< HEAD
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import tn.esprit.spring.Repository.AnnonceRepository;
-import tn.esprit.spring.Repository.UserRepository;
-import tn.esprit.spring.Service.UserService;
-import tn.esprit.spring.Entity.User;
+import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.service.UserService;
+import tn.esprit.spring.entity.User;
 
 @SpringBootTest
 class DariTnApplicationTests {
@@ -32,4 +33,15 @@ class DariTnApplicationTests {
 	
 	
 	
+=======
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DariTnApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+>>>>>>> annoncee
 }

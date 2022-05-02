@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -10,7 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;

@@ -1,12 +1,12 @@
-package tn.esprit.spring.Service;
+package tn.esprit.spring.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.Entity.User;
-import tn.esprit.spring.Repository.UserRepository;
+import tn.esprit.spring.entity.User;
+import tn.esprit.spring.repository.UserRepository;
 
 @Service
 public class UserServiceIMPL implements UserService {
@@ -48,6 +48,7 @@ public class UserServiceIMPL implements UserService {
 		// TODO Auto-generated method stub
 		return UserRepo.findByUsername(username).orElseThrow(null);
 	}
+
 
 	@Override
 	public List<User> getAllUsers() {

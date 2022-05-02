@@ -1,13 +1,12 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import java.util.Date;
-
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 
 import lombok.Getter;

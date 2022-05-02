@@ -1,17 +1,16 @@
 package tn.esprit.spring.services;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.Entity.Mobilier;
+import tn.esprit.spring.entity.Mobilier;
 import tn.esprit.spring.interfaces.IMobilierService;
-import tn.esprit.spring.Repository.ImageVideoRepository;
-import tn.esprit.spring.Repository.MobilierRepository;
+import tn.esprit.spring.repository.ImageVideoRepository;
+import tn.esprit.spring.repository.MobilierRepository;
 
 
 

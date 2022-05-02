@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 public enum TypeAnnonce {
 	Achat,Location;

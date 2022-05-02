@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -26,6 +26,7 @@ import lombok.Setter;
 public class Agent implements Serializable{
 	private static final long serialVersionUID = 1L;
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -34,6 +35,7 @@ public class Agent implements Serializable{
 	private int Telephone;
 
 	private int ventes,locations;
+
 
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="agent")

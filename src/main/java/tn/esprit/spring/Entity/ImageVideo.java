@@ -1,4 +1,4 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.entity;
 
 import java.io.Serializable;
 
@@ -11,8 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,5 +37,7 @@ public class ImageVideo implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
 	Mobilier mobilier; 
 
-}
+    @ManyToOne(cascade = CascadeType.ALL)
+	Annonce annonce;
 
+}
