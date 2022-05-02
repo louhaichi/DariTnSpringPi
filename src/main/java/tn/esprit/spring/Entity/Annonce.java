@@ -3,6 +3,7 @@ package tn.esprit.spring.Entity;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -33,6 +34,7 @@ public class Annonce {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String titre;
+	@Column(columnDefinition="TEXT")
 	private String description;
 	private String localisation;
 	private int nbchambre;
