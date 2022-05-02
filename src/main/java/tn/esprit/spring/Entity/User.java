@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -83,10 +85,10 @@ public class User implements Serializable {
 	private Set<Coupon> coupons;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
-	private Set<Annonce> annonces;
+	private List<Annonce> annonces;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="Acheteur")
-	private Set<Annonce> MesBiens;
+	private List<Annonce> MesBiens;
 	
 
 	@JsonIgnore
@@ -170,5 +172,21 @@ public class User implements Serializable {
 	    this.roles = roles;
 	  }
 	
+	  @JsonManagedReference(value="annonce")
+	  public List<Annonce> getAnnonces() {
+			return annonces;
+		}
+
+		public void setAnnonces(List<Annonce> annonces) {
+			this.annonces = annonces;
+		}
+		  @JsonManagedReference(value="biens")
+		public List<Annonce> getMesBiens() {
+			return MesBiens;
+		}
+
+		public void setMesBiens(List<Annonce> mesBiens) {
+			MesBiens = mesBiens;
+		}
 	
 }

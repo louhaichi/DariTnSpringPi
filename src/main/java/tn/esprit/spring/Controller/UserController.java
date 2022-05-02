@@ -54,7 +54,7 @@ public class UserController {
 	public ResponseEntity<User> updateUser(@PathVariable Long id,@RequestBody User u){
 		User UX = Userservice.getUser(id);
 		
-		
+		UX.setUsername(u.getUsername());
 		UX.setEmail(u.getEmail());
 		UX.setPassword(u.getPassword());
 		
