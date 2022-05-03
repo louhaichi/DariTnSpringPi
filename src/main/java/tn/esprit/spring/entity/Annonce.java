@@ -35,7 +35,7 @@ import lombok.Setter;
 
 public class Annonce implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+//testtt
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
