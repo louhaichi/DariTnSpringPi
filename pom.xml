@@ -53,6 +53,7 @@
 			<scope>provided</scope>
 		</dependency>
 
+
 				<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
@@ -72,6 +73,7 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 			<version>2.5.6</version>
 		</dependency>
+
 
 	</dependencies>
 

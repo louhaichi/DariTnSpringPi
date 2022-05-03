@@ -2,7 +2,7 @@ package tn.esprit.spring.interfaces;
 
 import java.util.List;
 
-import tn.esprit.spring.Entity.ImageVideo;
+import tn.esprit.spring.entity.ImageVideo;
 
 
 

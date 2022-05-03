@@ -1,14 +1,13 @@
 package tn.esprit.spring.services;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.Entity.ImageVideo;
+import tn.esprit.spring.entity.ImageVideo;
 import tn.esprit.spring.interfaces.IImageVideoService;
-import tn.esprit.spring.Repository.ImageVideoRepository;
+import tn.esprit.spring.repository.ImageVideoRepository;
 
 
 @Service
