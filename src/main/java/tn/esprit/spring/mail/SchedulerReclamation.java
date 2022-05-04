@@ -13,12 +13,12 @@ import java.util.List;
 public class SchedulerReclamation {
     @Autowired
     private EmailServiceImpl emailService;
-    //sta3malneh bech neba3tou mail
+    
 
     @Autowired
     private ReclamationService reclamationService;
 
-    @Scheduled(cron = "0 27 23 * * *")
+    @Scheduled(cron = "0 43 01 * * *")
     public void clotureReclamation(){
         System.out.println("------------------------ hehy ---------------------");
 
