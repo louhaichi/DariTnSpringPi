@@ -17,5 +17,9 @@ public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
 			+ " and A.prix Between :prix-100 And :prix+100 and A.nbchambre Between :NBchambre and :NBchambre+1 and A.type_annonce= :Typeannonce and A.id!=:id",nativeQuery = true)
 	List<Annonce> AnnonceSimilaires(String localisation,double prix,int NBchambre, String Typeannonce,long id);
 	
+	
+
+	@Query(value="SELECT * FROM `annonce` order by coupon_id DESC",nativeQuery = true )
+	List<Annonce> Annonces();	
 }
 

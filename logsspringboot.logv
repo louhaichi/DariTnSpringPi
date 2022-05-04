@@ -2370,3 +2370,82 @@ java.util.ConcurrentModificationException: null
 2022-05-03 22:55:17.690  INFO 10596 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
 2022-05-03 22:55:17.746  INFO 10596 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2022-05-03 22:55:18.037  INFO 10596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-04 01:35:54.880  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 5084 (C:\Users\Asus\Desktop\cloudpimerge\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloudpimerge\DariTnSpringPi)
+2022-05-04 01:35:54.927  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-04 01:35:55.071  INFO 5084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-04 01:35:55.072  INFO 5084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-04 01:35:57.767  INFO 5084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-04 01:35:57.972  INFO 5084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 187 ms. Found 9 JPA repository interfaces.
+2022-05-04 01:35:59.321  INFO 5084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-04 01:35:59.337  INFO 5084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-04 01:35:59.338  INFO 5084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-04 01:35:59.573  INFO 5084 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-04 01:35:59.573  INFO 5084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4498 ms
+2022-05-04 01:35:59.707  WARN 5084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-04 01:35:59.939  INFO 5084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-04 01:36:00.055  INFO 5084 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-04 01:36:00.365  INFO 5084 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-04 01:36:00.574  INFO 5084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-04 01:36:00.915  INFO 5084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-04 01:36:00.948  INFO 5084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-04 01:37:38.221  INFO 5084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-04 01:37:38.313  INFO 5084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 01:37:44.181  INFO 5084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-04 01:37:44.464  INFO 5084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-04 01:37:45.445  INFO 5084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-04 01:37:48.219  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 114.209 seconds (JVM running for 116.637)
+2022-05-04 01:38:05.620  INFO 5084 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 01:38:05.626  INFO 5084 --- [Thread-4] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-05-04 01:38:20.097  INFO 5084 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-04 01:38:20.161  INFO 5084 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-04 01:38:20.392  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 5084 (C:\Users\Asus\Desktop\cloudpimerge\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloudpimerge\DariTnSpringPi)
+2022-05-04 01:38:20.392  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-04 01:38:21.915  INFO 5084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-04 01:38:22.097  INFO 5084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 9 JPA repository interfaces.
+2022-05-04 01:38:22.617  INFO 5084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-04 01:38:22.618  INFO 5084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-04 01:38:22.619  INFO 5084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-04 01:38:22.692  INFO 5084 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-04 01:38:22.693  INFO 5084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2293 ms
+2022-05-04 01:38:22.796  WARN 5084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-04 01:38:22.928  INFO 5084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-04 01:38:22.966  INFO 5084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-05-04 01:38:23.068  INFO 5084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-05-04 01:38:23.069  INFO 5084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-04 01:39:22.753  INFO 5084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-04 01:39:22.754  INFO 5084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 01:39:24.272  INFO 5084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-04 01:39:24.370  INFO 5084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-04 01:39:24.708  INFO 5084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-04 01:39:26.488  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 66.206 seconds (JVM running for 214.906)
+2022-05-04 01:39:26.501  INFO 5084 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-04 01:40:50.265  INFO 5084 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-04 01:40:50.265  INFO 5084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-04 01:40:50.267  INFO 5084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-04 01:52:27.273 ERROR 5084 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-04 01:59:26.757  INFO 5084 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 01:59:26.759  INFO 5084 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-05-04 01:59:26.763  INFO 5084 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-05-04 01:59:27.111  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 5084 (C:\Users\Asus\Desktop\cloudpimerge\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloudpimerge\DariTnSpringPi)
+2022-05-04 01:59:27.111  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-04 01:59:29.718  INFO 5084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-04 01:59:29.913  INFO 5084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194 ms. Found 9 JPA repository interfaces.
+2022-05-04 01:59:30.456  INFO 5084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-04 01:59:30.460  INFO 5084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-04 01:59:30.460  INFO 5084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-04 01:59:30.624  INFO 5084 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-04 01:59:30.627  INFO 5084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3505 ms
+2022-05-04 01:59:30.807  WARN 5084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-04 01:59:31.075  INFO 5084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-04 01:59:31.104  INFO 5084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-05-04 01:59:31.157  INFO 5084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-05-04 01:59:31.157  INFO 5084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-04 01:59:40.261  INFO 5084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-04 01:59:40.261  INFO 5084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-04 01:59:41.522  INFO 5084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-04 01:59:41.584  INFO 5084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-04 01:59:41.904  INFO 5084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-04 01:59:44.039  INFO 5084 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 17.085 seconds (JVM running for 1432.457)
+2022-05-04 01:59:44.046  INFO 5084 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-04 01:59:47.746  INFO 5084 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-04 01:59:47.747  INFO 5084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'

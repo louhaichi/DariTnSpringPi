@@ -74,11 +74,12 @@ public class AnnonceController {
 		
 	}
 	
-	@PutMapping("/AffecterCoupon/{idAnnonce}/{idCoupon}")
-	public void AffecterCoupon(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idCoupon") Long idCoupon) {
-		annonceService.AffecterAnnonce(idAnnonce, idCoupon);
+	@PutMapping("/AffecterCoupon/{idAnnonce}/{codeCoupon}")
+	public void AffecterCoupon(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("codeCoupon") String code) {
+		annonceService.AffecterAnnonce(idAnnonce, code);
 		
 	}
+		
 		
 	@PutMapping("/AffecterAgent/{idAnnonce}/{idAgent}")
 	public void AffecterAgent(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idAgent") Long idAgent) {

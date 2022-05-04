@@ -13,7 +13,7 @@ public interface AnnonceService  {
 	void deleteAnnonce(Annonce a);
 	void deleteAnnonceById(Long id);
 	Annonce getAnnonce(Long id);
-	void AffecterAnnonce(Long idAnnonce, Long idCoupon);
+	void AffecterAnnonce(Long idAnnonce, String code);
 	List<Annonce> getAllAnnonces();
 	
 }
