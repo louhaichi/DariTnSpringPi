@@ -38,7 +38,9 @@ public class ReactionCommentaire {
 	@ManyToOne
 	Commentaire commentaire;
 	
-	
+	public boolean getReaction() {
+		return this.reaction;
+	}
 
 
 }

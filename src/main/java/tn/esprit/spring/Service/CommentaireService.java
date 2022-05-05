@@ -57,13 +57,23 @@ public class CommentaireService implements CommentaireInterface{
 	
 	@Transactional
 	public void addAndAssignReactionCommentaireToCommentaire(Long sujetId , ReactionCommentaire reactionCommentaire) {
-		
 		Commentaire c =commenairetRepository.findById(sujetId).orElse(null);
-		reactionCommentaire.setCommentaire(c);
-		reactionCommenairetRepository.save(reactionCommentaire);
-		//Commentaire co= commentaireRepository.findById(commentaireId).orElse(null);
-		c.getReactions().add(reactionCommentaire); //not working
-		commenairetRepository.save(c); //not working
-		//commentaireRepository.save(co);
+		int reacted=0;
+		for (ReactionCommentaire r : c.getReactions()) {
+	        if (r.getIduser()==reactionCommentaire.getIduser()) {
+	        	reacted=1;
+	        	r.setReaction(reactionCommentaire.getReaction());
+	        	commenairetRepository.save(c); 
+	        }
+	    }
+		if(reacted==0) {
+			reactionCommentaire.setCommentaire(c);
+			reactionCommenairetRepository.save(reactionCommentaire);
+			//Commentaire co= commentaireRepository.findById(commentaireId).orElse(null);
+			c.getReactions().add(reactionCommentaire); //not working
+			commenairetRepository.save(c); //not working
+			//commentaireRepository.save(co);
+		}
+		
 	}
 }

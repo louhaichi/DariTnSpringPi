@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 import tn.esprit.spring.Interface.CommentaireInterface;
 import tn.esprit.spring.Entity.Commentaire;
+import tn.esprit.spring.Entity.ReactionCommentaire;
 
 @RestController
 @RequestMapping("/commentaire")
@@ -62,4 +63,9 @@ public class CommentaireController {
 		return commentaireInterface.updateCommentaire(s);
 	}
 	
+	@PutMapping("/addAndAssignReactionCommentaireToCommentaire/{commentaire-id}")
+	@ResponseBody
+	public void addAndAssignReactionCommentaireToCommentaire(@PathVariable("commentaire-id") Long commentaireId,@RequestBody ReactionCommentaire reactionCommentaire) {
+		commentaireInterface.addAndAssignReactionCommentaireToCommentaire(commentaireId, reactionCommentaire);
+	}	
 }

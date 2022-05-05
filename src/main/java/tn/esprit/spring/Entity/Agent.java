@@ -22,12 +22,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Agent {
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String nom;
 	private String prenom;
 	private int Telephone;
+	private int ventes,locations;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="agent")
 	private Set<Annonce> annonces;
