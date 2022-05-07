@@ -2,14 +2,13 @@ package tn.esprit.spring;
 
 import org.junit.jupiter.api.Test;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.AnnonceRepository;
 import tn.esprit.spring.repository.UserRepository;
 import tn.esprit.spring.service.UserService;
-import tn.esprit.spring.entity.User;
 
 @SpringBootTest
 class DariTnApplicationTests {
@@ -28,7 +27,9 @@ class DariTnApplicationTests {
 		User u=us.getUserByUsername("adminFiras");
 		System.out.println("Email : "+u.getEmail()+" id  :" + u.getId());
 		
-	}
+		
 	}
 	
 	
+	
+}

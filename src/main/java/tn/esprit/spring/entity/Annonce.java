@@ -2,10 +2,10 @@ package tn.esprit.spring.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -19,7 +19,6 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,50 +32,35 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Annonce implements Serializable {
+public class Annonce implements Serializable{
 	private static final long serialVersionUID = 1L;
-//testtt
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String titre;
-
-	@Column(columnDefinition="TEXT")
 	private String description;
 	private String localisation;
 	private int nbchambre;
 	private double prix;
-
-	private Boolean disponibilite;
+	private Boolean disponibilité;
 	private double surface;
 
-	
-	
-	//@JsonIgnore
-		@OneToMany(mappedBy="annonce",cascade =CascadeType.REMOVE)
-		@JsonIgnoreProperties("annonce")
-		private Set<ImageVideo> imageVideo ;
-	
-	
-	
-	@JsonIgnore
 	@OneToOne
 	private Coupon coupon;
 	
-	@JsonIgnore
 	@OneToOne
 	private DariRoom room;
 	
+
+	@JsonIgnore
 	@ManyToOne
 	User user;
-	
-	
+	@JsonIgnore
 	@ManyToOne
 	User Acheteur;
 	@JsonIgnore
 	@ManyToOne 
 	Agent agent;
-
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="annonce")
 	private Set<RDV> rdvs;
@@ -100,7 +84,6 @@ public class Annonce implements Serializable {
 	public void setAcheteur(User acheteur) {
 		Acheteur = acheteur;
 	}
-
 	
 	
 }

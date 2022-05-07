@@ -64,5 +64,4 @@ public void SetImageUser(Long id,String img) {
 	
 	
 }
-
 }

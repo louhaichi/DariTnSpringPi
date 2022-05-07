@@ -2,8 +2,6 @@ package tn.esprit.spring.service;
 
 import java.util.List;
 
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +9,10 @@ import tn.esprit.spring.entity.Agent;
 import tn.esprit.spring.entity.Annonce;
 import tn.esprit.spring.entity.Coupon;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.repository.*;
+import tn.esprit.spring.repository.AgentRepository;
+import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.CouponRepository;
+import tn.esprit.spring.repository.UserRepository;
 
 @Service
 public class AnnonceServiceImpl  implements AnnonceService {
@@ -19,46 +20,24 @@ public class AnnonceServiceImpl  implements AnnonceService {
 	@Autowired
 	AnnonceRepository annonceRepository;
 	@Autowired
-
-	UserRepository userRepo;
-	
+	AgentRepository AgRepos;
 	@Autowired
-	AgentRepository agentRepo;
-	
+	UserRepository UserRepo;
 	@Autowired
 	CouponRepository couponRepo;
-	@Autowired
-	ImageVideoRepository imageVideoRepository;
-
+	
 	@Override
-	public Annonce saveAnnonce(Annonce a, Long idUser ) {
-		User u = userRepo.findById(idUser).orElseThrow(null);
-		a.setUser(u);
-		a.setDisponibilite(true);
+	public Annonce saveAnnonce(Annonce a,Long idUser) {
+		User user=UserRepo.findById(idUser).orElse(null);
+		a.setUser(user);
+		a.setDisponibilité(true);
 		
-		Annonce annonce = annonceRepository.save(a);
-		a.getImageVideo().forEach(i->i.setAnnonce(annonce));
-		System.out.println(a.getTitre());
-		
-		annonce.setImageVideo(imageVideoRepository.saveAll(a.getImageVideo()).stream().collect(Collectors.toSet()));
-		
-		
-		return annonce;
-		
-		
+		return annonceRepository.save(a);
 	}
 
 	@Override
 	public Annonce updateAnnonce(Annonce a) {
-
-		Annonce annonce = annonceRepository.save(a);
-		a.getImageVideo().forEach(i->i.setAnnonce(annonce));
-		
-		annonce.setImageVideo(imageVideoRepository.saveAll(a.getImageVideo()).stream().collect(Collectors.toSet()));
-		
-		
-		return annonce;
-		
+		return annonceRepository.save(a);
 	}
 
 	@Override
@@ -82,55 +61,46 @@ public class AnnonceServiceImpl  implements AnnonceService {
 
 	@Override
 	public List<Annonce> getAllAnnonces() {
-		return annonceRepository.Annonces();
+		return annonceRepository.findAll();
 	}
 
+	// affecter un agent a une annonce
 	@Override
-	public void acheterAnnonce(Long idAnnonce, Long idUser) {
-		User u = userRepo.findById(idUser).orElseThrow(null);
-		Annonce a = annonceRepository.findById(idAnnonce).orElseThrow(null);
+	public void AffecterAgent(Long idAnn, Long idAgent) {
+		Annonce annonce= annonceRepository.findById(idAnn).orElse(null);
+		Agent agent=AgRepos.findById(idAgent).orElse(null);
+		annonce.setAgent(agent);
+		annonceRepository.save(annonce);
 		
-		 
-		a.setDisponibilite(false);
-		a.setAcheteur(u);
-		
-		if(a.getTypeAnnonce().toString() =="Achat")
-		{
-		   a.setUser(null);
-		   a.getAgent().setVentes(a.getAgent().getVentes()+1);
-		   
+	}
+
+	//Accheter annonce par un utilisateur 
+	@Override
+	public void AcheterAnnonce(Long idAnn, Long idAcheteur) {
+		User Acheteur = UserRepo.findById(idAcheteur).orElse(null);
+		Annonce annonce= annonceRepository.findById(idAnn).orElse(null);
+		if (annonce.getDisponibilité()==true) {
+		annonce.setAcheteur(Acheteur);
+		annonce.setDisponibilité(false);
+		if (annonce.getTypeAnnonce().toString()=="Achat") {
+			annonce.getAgent().setVentes(annonce.getAgent().getVentes()+1);
+			annonce.setUser(null);
 		}
-		else {
-			a.getAgent().setLocations(a.getAgent().getLocations()+1);
+		else  annonce.getAgent().setLocations(annonce.getAgent().getLocations()+1);
+		annonceRepository.save(annonce);
 		}
-		annonceRepository.save(a);
-		
-	
-	}
-
-	@Override
-	public void AffecterAnnonce(Long idAnnonce, String code) {
-		Coupon c = couponRepo.findByCode(code);
-		Annonce a = annonceRepository.findById(idAnnonce).orElseThrow(null);
-		
-		a.setCoupon(c);
-		c.setEtat(false);
-		annonceRepository.save(a);
-		
 		
 	}
 
 	@Override
-	public void affecterAgent(Long idAnnonce, Long idAgent) {
-		Agent ag= agentRepo.findById(idAgent).orElseThrow(null);
-		Annonce a = annonceRepository.findById(idAnnonce).orElseThrow(null);
-		a.setAgent(ag);
-		annonceRepository.save(a);
+	public void AffecterCoupons(Long idAnn, Long idCoupon) {
 		
+		Annonce annonce= annonceRepository.findById(idAnn).orElse(null);
+		Coupon coupon=couponRepo.findById(idCoupon).orElse(null);
+		
+		annonce.setCoupon(coupon);
+		coupon.setEtat(false);
+		annonceRepository.save(annonce);
 	}
-	
-	@Override
-	public Long getUserFromAnnonce(Long idannonce) {
-		return annonceRepository.getUserFromAnnonce(idannonce);
-	}
+
 }
