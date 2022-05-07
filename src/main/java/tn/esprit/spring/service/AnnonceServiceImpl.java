@@ -133,4 +133,9 @@ public class AnnonceServiceImpl  implements AnnonceService {
 		annonceRepository.save(a);
 		
 	}
+	
+	@Override
+	public Long getUserFromAnnonce(Long idannonce) {
+		return annonceRepository.getUserFromAnnonce(idannonce);
+	}
 }

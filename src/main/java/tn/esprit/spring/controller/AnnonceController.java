@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Annonce;
+import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.AnnonceRepository;
 import tn.esprit.spring.service.AnnonceService;
 
@@ -98,6 +99,11 @@ public class AnnonceController {
 		Annonce A= annonceService.getAnnonce(idAnnonce) ;
 		System.out.println(A.getTypeAnnonce());
 	return AR.AnnonceSimilaires(A.getLocalisation(),A.getPrix(),A.getNbchambre(),A.getTypeAnnonce().toString(),A.getId());
+	}
+	
+	@GetMapping("/getuserfromannonce/{idAnnonce}")
+	public Long getUserFromAnnonce(@PathVariable("idAnnonce") Long idAnnonce) {
+	return annonceService.getUserFromAnnonce(idAnnonce);
 	}
 	
 }

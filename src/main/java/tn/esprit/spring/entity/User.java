@@ -68,8 +68,8 @@ public class User implements Serializable {
 	  private Set<Role> roles = new HashSet<>();
 	
 	private long telephone;
-	@JsonIgnore
-	@Column(nullable = true, length = 64)
+	
+	@Column(columnDefinition = "LONGTEXT")
 	private String photos;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
@@ -77,7 +77,7 @@ public class User implements Serializable {
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Coupon> coupons;
-	@JsonIgnore
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private List<Annonce> annonces;
 	@JsonIgnore

@@ -1,12 +1,14 @@
 package tn.esprit.spring.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import tn.esprit.spring.entity.Annonce;
+import tn.esprit.spring.entity.User;
 
 @Repository
 public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
@@ -21,5 +23,8 @@ public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
 
 	@Query(value="SELECT * FROM `annonce` order by coupon_id DESC",nativeQuery = true )
 	List<Annonce> Annonces();	
+
+	@Query(value="SELECT user_id FROM Annonce a WHERE a.id=:idannonce",nativeQuery = true )
+	Long getUserFromAnnonce(Long idannonce);
 }
 

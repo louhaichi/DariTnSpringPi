@@ -3,6 +3,7 @@ package tn.esprit.spring.service;
 import java.util.List;
 
 import tn.esprit.spring.entity.Annonce;
+import tn.esprit.spring.entity.User;
 
 public interface AnnonceService  {
 
@@ -15,5 +16,6 @@ public interface AnnonceService  {
 	Annonce getAnnonce(Long id);
 	void AffecterAnnonce(Long idAnnonce, String code);
 	List<Annonce> getAllAnnonces();
+	Long getUserFromAnnonce(Long idannonce);
 	
 }

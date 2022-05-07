@@ -67,11 +67,10 @@ public class Annonce implements Serializable {
 	@OneToOne
 	private DariRoom room;
 	
-	@JsonIgnore
 	@ManyToOne
 	User user;
 	
-	@JsonIgnore
+	
 	@ManyToOne
 	User Acheteur;
 	@JsonIgnore

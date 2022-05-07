@@ -52,6 +52,13 @@ public class UserController {
 		return ResponseEntity.ok(u);
 	}
 	
+	@GetMapping("/usersFA/{id}")
+	public ResponseEntity<User> getUserByIdFromAnnonce(@PathVariable Long id) {
+		User u =Userservice.getUser(id);
+
+		return ResponseEntity.ok(u);
+	}
+	
 	@PutMapping("/users/{id}")
 	public ResponseEntity<User> updateUser(@PathVariable Long id,@RequestBody User u){
 		User UX = Userservice.getUser(id);
@@ -70,6 +77,8 @@ public class UserController {
 	username) {
 	return userRepo.findByUsername(username);
 	}
+	
 
+	
 
 }
