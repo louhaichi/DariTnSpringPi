@@ -19,6 +19,7 @@ public class SwaggerConfig {
 		.apis(RequestHandlerSelectors.any())
 		.paths(PathSelectors.any())
 		.build().apiInfo(apiInfo());
+
 		}
 		private ApiInfo apiInfo () {
 		return new ApiInfoBuilder()
