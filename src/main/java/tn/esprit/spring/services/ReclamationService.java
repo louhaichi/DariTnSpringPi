@@ -34,10 +34,14 @@ public class ReclamationService implements IReclamationService {
 
 	@Override
 	public Reclamation updateReclamation(Reclamation r) {
-		if (!r.getReponse().equals("") || r.getReponse() != null) {
-			Reclamation reclamation = reclamationRepository.findById(r.getId()).get();
-			this.emailService.sendSimpleMessage(reclamation.getUser().getEmail(), "reclamation numero " + r.getId(), r.getReponse());
-			r.setStatus(ReclamationStatus.TRAITEE);
+
+		if(r.getReponse() != null){
+			if (!r.getReponse().equals("") || r.getReponse() != null) {
+				Reclamation reclamation = reclamationRepository.findById(r.getId()).get();
+				this.emailService.sendSimpleMessage(reclamation.getUser().getEmail(), "reclamation numero " + r.getId(), r.getReponse());
+				r.setStatus(ReclamationStatus.TRAITEE);
+
+			}
 
 		}
 		return reclamationRepository.save(r);

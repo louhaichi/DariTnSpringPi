@@ -11,12 +11,7 @@ import tn.esprit.spring.entity.Agent;
 import tn.esprit.spring.entity.Annonce;
 import tn.esprit.spring.entity.Coupon;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.repository.AgentRepository;
-import tn.esprit.spring.repository.AnnonceRepository;
-import tn.esprit.spring.repository.CouponRepository;
-
-import tn.esprit.spring.repository.ImageVideoRepository;
-import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.repository.*;
 
 @Service
 public class AnnonceServiceImpl  implements AnnonceService {
