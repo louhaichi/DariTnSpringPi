@@ -18,7 +18,7 @@ public class SchedulerReclamation {
     @Autowired
     private ReclamationService reclamationService;
 
-    @Scheduled(cron = "0 27 23 * * *")
+    @Scheduled(cron = "0 16 16 * * *")
     public void clotureReclamation(){
         System.out.println("------------------------ hehy ---------------------");
 

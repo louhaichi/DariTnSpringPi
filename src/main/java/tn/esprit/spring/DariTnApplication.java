@@ -13,14 +13,11 @@ import java.util.Properties;
 @EnableWebMvc
 @SpringBootApplication
 @EnableScheduling
-
 public class DariTnApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DariTnApplication.class, args);
 		//firas
-
-
 	}
 
 	@Bean
@@ -39,7 +36,6 @@ public class DariTnApplication {
 		props.put("mail.debug", "true");
 
 		return mailSender;
-
 	}
 
 }

@@ -77,7 +77,12 @@ public class UserController {
 	username) {
 	return userRepo.findByUsername(username);
 	}
-	
+
+	@GetMapping("/usersid/{userid}")
+	public ResponseEntity<User> getUserByIdd(@PathVariable long userid) {
+		User u =Userservice.getUser(userid);
+		return ResponseEntity.ok(u);
+	}
 
 	
 

@@ -1,6 +1,7 @@
 package tn.esprit.spring.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,12 +36,14 @@ public class Sujet implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private String titre;
+	@Column(columnDefinition="TEXT")
 	private String description;
 	@Temporal(TemporalType.DATE)
 	private Date dateAjout;
 	private String image;
 	@ManyToOne
 	User user;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="sujet")
 	private Set<Commentaire> commentaires;
 	
