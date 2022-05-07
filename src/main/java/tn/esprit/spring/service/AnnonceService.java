@@ -3,6 +3,7 @@ package tn.esprit.spring.service;
 import java.util.List;
 
 import tn.esprit.spring.entity.Annonce;
+import tn.esprit.spring.entity.User;
 
 public interface AnnonceService  {
 
@@ -13,7 +14,8 @@ public interface AnnonceService  {
 	void deleteAnnonce(Annonce a);
 	void deleteAnnonceById(Long id);
 	Annonce getAnnonce(Long id);
-	void AffecterAnnonce(Long idAnnonce, Long idCoupon);
+	void AffecterAnnonce(Long idAnnonce, String code);
 	List<Annonce> getAllAnnonces();
+	Long getUserFromAnnonce(Long idannonce);
 	
 }

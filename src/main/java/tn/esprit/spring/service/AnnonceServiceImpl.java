@@ -82,7 +82,7 @@ public class AnnonceServiceImpl  implements AnnonceService {
 
 	@Override
 	public List<Annonce> getAllAnnonces() {
-		return annonceRepository.findAll();
+		return annonceRepository.Annonces();
 	}
 
 	@Override
@@ -109,8 +109,8 @@ public class AnnonceServiceImpl  implements AnnonceService {
 	}
 
 	@Override
-	public void AffecterAnnonce(Long idAnnonce, Long idCoupon) {
-		Coupon c = couponRepo.findById(idCoupon).orElseThrow(null);
+	public void AffecterAnnonce(Long idAnnonce, String code) {
+		Coupon c = couponRepo.findByCode(code);
 		Annonce a = annonceRepository.findById(idAnnonce).orElseThrow(null);
 		
 		a.setCoupon(c);
@@ -127,5 +127,10 @@ public class AnnonceServiceImpl  implements AnnonceService {
 		a.setAgent(ag);
 		annonceRepository.save(a);
 		
+	}
+	
+	@Override
+	public Long getUserFromAnnonce(Long idannonce) {
+		return annonceRepository.getUserFromAnnonce(idannonce);
 	}
 }

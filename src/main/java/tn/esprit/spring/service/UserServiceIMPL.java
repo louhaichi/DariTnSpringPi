@@ -43,6 +43,7 @@ public class UserServiceIMPL implements UserService {
 		// TODO Auto-generated method stub
 		return UserRepo.findById(id).orElseThrow(null);
 	}
+	
 	@Override
 	public User getUserByUsername(String username) {
 		// TODO Auto-generated method stub
