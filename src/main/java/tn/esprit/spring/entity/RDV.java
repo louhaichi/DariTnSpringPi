@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,6 +34,7 @@ public class RDV implements Serializable{
 
 
 	private Date dateRDV;
+	@JsonBackReference(value="RDV")
 	@ManyToOne
 	User user;
 	@ManyToOne

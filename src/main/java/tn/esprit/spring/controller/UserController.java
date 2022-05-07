@@ -67,7 +67,7 @@ public class UserController {
 		UX.setEmail(u.getEmail());
 		UX.setPassword(u.getPassword());
 
-		UX.setPhotos(u.getPhotos());
+		
 		User updateUser = Userservice.updateUser(UX);
 		return ResponseEntity.ok(updateUser);
 	}
@@ -83,6 +83,17 @@ public class UserController {
 		User u =Userservice.getUser(userid);
 		return ResponseEntity.ok(u);
 	}
+	@PutMapping("/users/SetImage/{id}")
+	public ResponseEntity<User> SetUserImage(@PathVariable Long id,@RequestBody String img){
+		User UX = Userservice.getUser(id);
+		
+	
+		UX.setImage(img);
+		User updateUser = Userservice.updateUser(UX);
+		return ResponseEntity.ok(updateUser);
+	}
+	
+	
 
 	
 

@@ -58,7 +58,8 @@ public class User implements Serializable {
 	  @Size(max = 120)
 	  private String password;
 	
-	
+	@Column(columnDefinition = "LONGTEXT")
+    String image ;
 	
 	
 	@ManyToMany(fetch = FetchType.LAZY)
@@ -69,9 +70,8 @@ public class User implements Serializable {
 	
 	private long telephone;
 	
-	@Column(columnDefinition = "LONGTEXT")
-	private String photos;
-	@JsonIgnore
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<RDV> RDVS;
 	@JsonIgnore
@@ -182,5 +182,15 @@ public class User implements Serializable {
 		public void setMesBiens(List<Annonce> mesBiens) {
 			MesBiens = mesBiens;
 		}
+		
+		@JsonManagedReference(value="RDV")
+		public Set<RDV> getRDVS() {
+			return RDVS;
+		}
+
+		public void setRDVS(Set<RDV> rDVS) {
+			RDVS = rDVS;
+		}
+		
 
 }

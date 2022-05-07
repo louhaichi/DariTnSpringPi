@@ -17,7 +17,7 @@ import tn.esprit.spring.repository.UserRepository;
 
 @Service
 public class RDVServiceIMPL implements RDVService {
-	
+
 	@Autowired
 	RDVRepository RDVRepo;
 	@Autowired
@@ -33,12 +33,11 @@ public class RDVServiceIMPL implements RDVService {
 		u.setAnnonce(annonce);
 		u.setDateRDV(new Date(System.currentTimeMillis()));
 		return RDVRepo.save(u);
-
 	}
 
 	@Override
 	public RDV updateRDV(RDV u) {
-		// TODO Auto-generated method stub
+		
 		return RDVRepo.save(u);
 	}
 
@@ -66,5 +65,6 @@ public class RDVServiceIMPL implements RDVService {
 		return RDVRepo.findAll();
 	}
 	
+
 
 }
