@@ -1,2 +1,8 @@
-2022-05-05 14:19:59.173  WARN 7044 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=10h47m828ms213µs500ns).
-2022-05-05 22:08:00.658  WARN 7044 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=7h24m3s661ms607µs800ns).
+2022-05-06 09:44:44.014  WARN 7044 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=10h57m12s743ms352µs600ns).
+2022-05-06 10:25:57.843  WARN 7044 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=5m43s268ms180µs).
+2022-05-06 11:08:45.509  WARN 7044 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=42m47s676ms939µs900ns).
+2022-05-06 11:36:15.765  WARN 7044 --- [HikariPool-13 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Thread starvation or clock leap detected (housekeeper delta=10m59s993ms203µs100ns).
+2022-05-06 11:47:56.449  INFO 7044 --- [RMI TCP Connection(856)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-05-06 11:47:56.595  INFO 7044 --- [RMI TCP Connection(856)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-06 11:47:56.596  INFO 7044 --- [RMI TCP Connection(856)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2022-05-06 11:47:56.599  INFO 7044 --- [RMI TCP Connection(856)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.

@@ -66,6 +66,10 @@ public class CommentaireController {
 	@PutMapping("/addAndAssignReactionCommentaireToCommentaire/{commentaire-id}")
 	@ResponseBody
 	public void addAndAssignReactionCommentaireToCommentaire(@PathVariable("commentaire-id") Long commentaireId,@RequestBody ReactionCommentaire reactionCommentaire) {
+		
+		
 		commentaireInterface.addAndAssignReactionCommentaireToCommentaire(commentaireId, reactionCommentaire);
+		
+		
 	}	
 }
