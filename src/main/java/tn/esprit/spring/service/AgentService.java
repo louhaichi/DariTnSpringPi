@@ -9,7 +9,6 @@ public interface AgentService {
 	Agent updateAgent(Agent u);
 	void deleteAgent(Agent u);
 	 void deleteAgentById(Long id);
-
 	Agent getAgent(Long id);
 	List<Agent> getAllAgents();
 	int Vente(Long idAgent);

@@ -54,15 +54,13 @@ public class AgentServiceIMPL implements AgentService {
 
 	@Override
 	public int Vente(Long idAgent) {
-
+		
 		return AgentRepo.findById(idAgent).orElse(null).getVentes();
-
 	}
 
 	@Override
 	public int Location(Long idAgent) {
 		return AgentRepo.findById(idAgent).orElse(null).getLocations();
 	}
-
 	
 }

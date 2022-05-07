@@ -43,13 +43,11 @@ public class UserServiceIMPL implements UserService {
 		// TODO Auto-generated method stub
 		return UserRepo.findById(id).orElseThrow(null);
 	}
-	
 	@Override
 	public User getUserByUsername(String username) {
 		// TODO Auto-generated method stub
 		return UserRepo.findByUsername(username).orElseThrow(null);
 	}
-
 
 	@Override
 	public List<User> getAllUsers() {
@@ -58,5 +56,12 @@ public class UserServiceIMPL implements UserService {
 	}
 	
 	
-
+@Override
+public void SetImageUser(Long id,String img) {
+	
+	User u = UserRepo.findById(id).orElseThrow(null);
+	u.setImage(img);
+	
+	
+}
 }

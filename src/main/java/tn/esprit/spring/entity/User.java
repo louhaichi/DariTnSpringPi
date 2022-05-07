@@ -1,13 +1,15 @@
 package tn.esprit.spring.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
-
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,15 +20,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
+import java.util.Set;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -58,10 +64,11 @@ public class User implements Serializable {
 	  @Size(max = 120)
 	  private String password;
 	
+	@Column(columnDefinition = "LONGTEXT")
+    String image ;
 	
 	
-	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	  @JoinTable(  name = "user_roles", 
 	        joinColumns = @JoinColumn(name = "user_id"), 
 	        inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -69,15 +76,12 @@ public class User implements Serializable {
 	
 	private long telephone;
 	
-	@Column(columnDefinition = "LONGTEXT")
-	private String photos;
-	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<RDV> RDVS;
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Coupon> coupons;
-	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private List<Annonce> annonces;
 	@JsonIgnore
@@ -183,4 +187,14 @@ public class User implements Serializable {
 			MesBiens = mesBiens;
 		}
 
+		@JsonManagedReference(value="RDV")
+		public Set<RDV> getRDVS() {
+			return RDVS;
+		}
+
+		public void setRDVS(Set<RDV> rDVS) {
+			RDVS = rDVS;
+		}
+		
+	
 }

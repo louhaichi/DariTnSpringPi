@@ -1,16 +1,17 @@
 package tn.esprit.spring.services;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.entity.Mobilier;
 import tn.esprit.spring.interfaces.IMobilierService;
 import tn.esprit.spring.repository.ImageVideoRepository;
 import tn.esprit.spring.repository.MobilierRepository;
+import tn.esprit.spring.entity.Mobilier;
 
 
 
@@ -30,7 +31,6 @@ public class MobilierService implements IMobilierService {
 	//bech yorbet id mobilier bel image
 	@Override
 	public Mobilier addMobilier(Mobilier r) {
-		r.setDate(LocalDate.now());
 		//r andou id maandouch image wel mobilier andou id ou maandouch image
 		//sajalna mobilier bech ywali aandou id
 		Mobilier mobilier = mobilierRepository.save(r);
@@ -45,7 +45,7 @@ public class MobilierService implements IMobilierService {
 				.stream()
 				// w men stream nestaamlou collect bech nrodouha set khater fel moblier l image mdeclaria set 
 				.collect(Collectors.toSet()));
-
+		r.setDate(LocalDate.now());
 		return mobilier;
 	}
 

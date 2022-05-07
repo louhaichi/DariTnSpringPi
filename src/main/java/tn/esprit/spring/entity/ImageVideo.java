@@ -12,6 +12,8 @@ import javax.persistence.Id;
 
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -37,7 +39,5 @@ public class ImageVideo implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
 	Mobilier mobilier; 
 
-    @ManyToOne(cascade = CascadeType.ALL)
-	Annonce annonce;
-
 }
+
