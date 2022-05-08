@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import tn.esprit.spring.entity.Coupon;
 import tn.esprit.spring.service.CouponService;
 
@@ -32,11 +33,8 @@ public class CouponController {
 		return couponService.getAllCoupons();
 		}
 	
-	
-	
-	// la creation d'un coupon se fait lorsque le user l'achette(donc le user cree un coupon
 	@PostMapping("/AjoutCoupon/{idUser}")
-	public Coupon ajoutCoupon(@RequestBody Coupon c,@PathVariable("idUser") Long idUser){
+	public Coupon ajoutCoupon( Coupon c , @PathVariable Long idUser){
 		return couponService.saveCoupon(c,idUser);
 		}
 	
@@ -56,3 +54,4 @@ public class CouponController {
 		return ResponseEntity.ok(updateCoupon);
 		}
 }
+

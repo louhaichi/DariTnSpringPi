@@ -73,3 +73,152 @@
 2022-05-07 19:40:43.568  INFO 11376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
 2022-05-07 19:40:43.943  INFO 11376 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 1.673 seconds (JVM running for 975.491)
 2022-05-07 19:40:43.945  INFO 11376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-08 12:02:28.590  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 10124 (C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi)
+2022-05-08 12:02:28.593  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:02:28.707  INFO 10124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-08 12:02:28.707  INFO 10124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-08 12:02:30.534  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:02:30.712  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 158 ms. Found 9 JPA repository interfaces.
+2022-05-08 12:02:31.968  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-08 12:02:31.983  INFO 10124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:02:31.984  INFO 10124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-08 12:02:32.208  INFO 10124 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:02:32.209  INFO 10124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3501 ms
+2022-05-08 12:02:32.311  WARN 10124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:02:32.523  INFO 10124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:02:32.646  INFO 10124 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-08 12:02:33.004  INFO 10124 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-08 12:02:33.209  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-08 12:02:33.470  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-08 12:02:33.491  INFO 10124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-08 12:02:38.142  INFO 10124 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:02:38.155  INFO 10124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:02:40.707  INFO 10124 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-08 12:02:40.898  INFO 10124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:02:41.605  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-08 12:02:44.442  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 16.569 seconds (JVM running for 18.269)
+2022-05-08 12:15:50.710  INFO 10124 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:15:50.735  INFO 10124 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-08 12:15:50.783  INFO 10124 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-08 12:15:51.150  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 10124 (C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi)
+2022-05-08 12:15:51.153  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:15:54.792  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:15:54.987  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 9 JPA repository interfaces.
+2022-05-08 12:15:55.706  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-08 12:15:55.719  INFO 10124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:15:55.720  INFO 10124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-08 12:15:55.899  INFO 10124 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:15:55.901  INFO 10124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4736 ms
+2022-05-08 12:15:56.058  WARN 10124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:15:56.283  INFO 10124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:15:56.329  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-05-08 12:15:56.409  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-05-08 12:15:56.410  INFO 10124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-08 12:16:01.882  INFO 10124 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:16:01.894  INFO 10124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:16:04.784  INFO 10124 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-08 12:16:04.848  INFO 10124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:16:05.276  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-08 12:16:07.710  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 16.743 seconds (JVM running for 821.537)
+2022-05-08 12:16:07.877  INFO 10124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-08 12:16:12.334  INFO 10124 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:16:12.338  INFO 10124 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-05-08 12:16:12.353  INFO 10124 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-05-08 12:16:12.602  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 10124 (C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi)
+2022-05-08 12:16:12.604  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:16:14.636  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:16:14.781  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 9 JPA repository interfaces.
+2022-05-08 12:16:15.231  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-08 12:16:15.233  INFO 10124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:16:15.233  INFO 10124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-08 12:16:15.301  INFO 10124 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:16:15.302  INFO 10124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2678 ms
+2022-05-08 12:16:15.371  WARN 10124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:16:15.516  INFO 10124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:16:15.580  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-05-08 12:16:16.965  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-05-08 12:16:16.968  INFO 10124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-08 12:16:18.963  INFO 10124 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:16:18.964  INFO 10124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:16:22.267  INFO 10124 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-08 12:16:22.359  INFO 10124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:16:22.935  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-08 12:16:25.228  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 12.75 seconds (JVM running for 839.055)
+2022-05-08 12:16:25.232  INFO 10124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-08 12:21:01.280  INFO 10124 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-08 12:21:01.402  INFO 10124 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-08 12:21:01.408  INFO 10124 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2022-05-08 12:21:03.511 ERROR 10124 --- [http-nio-8081-exec-5] tn.esprit.spring.security.jwt.JwtUtils   : JWT token is expired: JWT expired at 2022-05-08T11:14:44Z. Current time: 2022-05-08T12:21:03Z, a difference of 3979511 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-05-08 12:21:03.512 ERROR 10124 --- [http-nio-8081-exec-4] tn.esprit.spring.security.jwt.JwtUtils   : JWT token is expired: JWT expired at 2022-05-08T11:14:44Z. Current time: 2022-05-08T12:21:03Z, a difference of 3979511 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-05-08 12:21:03.542 ERROR 10124 --- [http-nio-8081-exec-4] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:21:03.542 ERROR 10124 --- [http-nio-8081-exec-5] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:21:05.711 ERROR 10124 --- [http-nio-8081-exec-8] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:21:05.711 ERROR 10124 --- [http-nio-8081-exec-7] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:24:52.477  WARN 10124 --- [http-nio-8081-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null (through reference chain: tn.esprit.spring.entity.Mobilier["vendeur"]->tn.esprit.spring.entity.User["roles"])]
+2022-05-08 12:24:56.508  WARN 10124 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null (through reference chain: tn.esprit.spring.entity.Mobilier["vendeur"]->tn.esprit.spring.entity.User["roles"])]
+2022-05-08 12:25:00.540  WARN 10124 --- [http-nio-8081-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null (through reference chain: tn.esprit.spring.entity.Mobilier["vendeur"]->tn.esprit.spring.entity.User["roles"])]
+2022-05-08 12:25:00.611  WARN 10124 --- [http-nio-8081-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null (through reference chain: tn.esprit.spring.entity.Mobilier["vendeur"]->tn.esprit.spring.entity.User["roles"])]
+2022-05-08 12:25:00.896  WARN 10124 --- [http-nio-8081-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null (through reference chain: tn.esprit.spring.entity.Mobilier["vendeur"]->tn.esprit.spring.entity.User["roles"])]
+2022-05-08 12:25:00.951  WARN 10124 --- [http-nio-8081-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "com.fasterxml.jackson.databind.JsonDeserializer.getObjectIdReader()" because "valueDes" is null (through reference chain: tn.esprit.spring.entity.Mobilier["vendeur"]->tn.esprit.spring.entity.User["roles"])]
+2022-05-08 12:32:06.773 ERROR 10124 --- [http-nio-8081-exec-9] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:32:06.773 ERROR 10124 --- [http-nio-8081-exec-3] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:32:40.166 ERROR 10124 --- [http-nio-8081-exec-2] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:39:41.128  INFO 10124 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:39:41.131  INFO 10124 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-05-08 12:39:41.319  INFO 10124 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-05-08 12:39:41.673  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 10124 (C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi)
+2022-05-08 12:39:41.674  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:39:43.530  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:39:43.602  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 9 JPA repository interfaces.
+2022-05-08 12:39:43.836  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-08 12:39:43.836  INFO 10124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:39:43.837  INFO 10124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-08 12:39:43.869  INFO 10124 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:39:43.869  INFO 10124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2182 ms
+2022-05-08 12:39:43.909  WARN 10124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:39:43.976  INFO 10124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:39:43.989  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-05-08 12:39:44.080  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-05-08 12:39:44.081  INFO 10124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-08 12:39:44.960  INFO 10124 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:39:44.961  INFO 10124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:39:45.962  INFO 10124 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-08 12:39:46.007  INFO 10124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:39:46.210  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-08 12:39:48.347  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 6.816 seconds (JVM running for 2242.174)
+2022-05-08 12:39:48.354  INFO 10124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-08 12:43:11.084  INFO 10124 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:43:11.086  INFO 10124 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-05-08 12:43:11.089  INFO 10124 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-05-08 12:43:11.317  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Starting DariTnApplication using Java 16.0.2 on DESKTOP-700H782 with PID 10124 (C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi\target\classes started by Asus in C:\Users\Asus\Desktop\cloooooooooooooooonee\DariTnSpringPi)
+2022-05-08 12:43:11.318  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-05-08 12:43:13.311  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-08 12:43:13.384  INFO 10124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 9 JPA repository interfaces.
+2022-05-08 12:43:13.622  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-05-08 12:43:13.623  INFO 10124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-08 12:43:13.624  INFO 10124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-08 12:43:13.659  INFO 10124 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2022-05-08 12:43:13.660  INFO 10124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2335 ms
+2022-05-08 12:43:13.699  WARN 10124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-08 12:43:13.762  INFO 10124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-08 12:43:13.775  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-05-08 12:43:14.179  INFO 10124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-05-08 12:43:14.180  INFO 10124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2022-05-08 12:43:14.649  INFO 10124 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-08 12:43:14.649  INFO 10124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-08 12:43:15.966  INFO 10124 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-08 12:43:16.006  INFO 10124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-08 12:43:16.304  INFO 10124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2022-05-08 12:43:17.776  INFO 10124 --- [restartedMain] tn.esprit.spring.DariTnApplication       : Started DariTnApplication in 6.507 seconds (JVM running for 2451.603)
+2022-05-08 12:43:17.779  INFO 10124 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-05-08 12:44:20.669  INFO 10124 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-08 12:44:20.672  INFO 10124 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-08 12:44:20.675  INFO 10124 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-08 12:45:04.985 ERROR 10124 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:45:04.985 ERROR 10124 --- [http-nio-8081-exec-3] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:56:25.446 ERROR 10124 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:57:43.755 ERROR 10124 --- [http-nio-8081-exec-2] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:57:43.756 ERROR 10124 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:58:57.961 ERROR 10124 --- [http-nio-8081-exec-3] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:58:57.964 ERROR 10124 --- [http-nio-8081-exec-6] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 13:53:36.327 ERROR 10124 --- [http-nio-8081-exec-7] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
