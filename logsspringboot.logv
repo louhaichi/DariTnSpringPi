@@ -216,3 +216,9 @@
 2022-05-08 12:44:20.675  INFO 10124 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2022-05-08 12:45:04.985 ERROR 10124 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
 2022-05-08 12:45:04.985 ERROR 10124 --- [http-nio-8081-exec-3] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:56:25.446 ERROR 10124 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:57:43.755 ERROR 10124 --- [http-nio-8081-exec-2] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:57:43.756 ERROR 10124 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:58:57.961 ERROR 10124 --- [http-nio-8081-exec-3] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 12:58:57.964 ERROR 10124 --- [http-nio-8081-exec-6] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-08 13:53:36.327 ERROR 10124 --- [http-nio-8081-exec-7] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
