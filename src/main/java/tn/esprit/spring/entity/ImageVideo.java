@@ -29,7 +29,7 @@ public class ImageVideo implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
-	//trodoutext twiiiiiiil
+	//LONGTEXT
 	@Column(columnDefinition = "LONGTEXT")
     String image ;
    // @JsonIgnore

@@ -29,6 +29,7 @@ public class Reclamation implements Serializable{
 	String Sujet ;
 	
 	LocalDate date;
+	
 	@Enumerated(value = EnumType.STRING)
 	ReclamationStatus status;
 	
