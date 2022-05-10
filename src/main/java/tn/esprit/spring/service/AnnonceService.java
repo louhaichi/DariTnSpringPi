@@ -15,4 +15,6 @@ public interface AnnonceService  {
 	void AffecterAnnonce(Long idAnnonce, String code);
 	List<Annonce> getAllAnnonces();
 	Long getUserFromAnnonce(Long idannonce);
+	Long checkCoupon(Long idCoupon);
+	Long verifEtatCoupon(String code);
 }

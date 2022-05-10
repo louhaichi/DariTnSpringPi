@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.spring.entity.Annonce;
 import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.ImageVideoRepository;
 import tn.esprit.spring.service.AnnonceService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -33,6 +34,9 @@ public class AnnonceController {
 	private AnnonceService annonceService;
 	
 
+	@Autowired
+	private ImageVideoRepository im;
+	
 	@Autowired
 	private AnnonceRepository AR;
 	
@@ -58,19 +62,11 @@ public class AnnonceController {
 		}
 	
 	@PutMapping("/ModifierAnnonce/{id}")
-	public ResponseEntity<Annonce>  ModifierAnnonce(@RequestBody Annonce A, @PathVariable Long id){
-		Annonce Ax= annonceService.getAnnonce(id);
-		Ax.setDescription(A.getDescription());
-		Ax.setLocalisation(A.getLocalisation());
-		Ax.setNbchambre(A.getNbchambre());
-		Ax.setPrix(A.getPrix());
-		Ax.setTitre(A.getTitre());
-		Ax.setSurface(A.getSurface());
-
-		Ax.setDisponibilite(A.getDisponibilite());
-		Ax.setTypeAnnonce(A.getTypeAnnonce());
-		Annonce updateAnnonce= annonceService.updateAnnonce(Ax);
-		return ResponseEntity.ok(updateAnnonce);
+	public Annonce ModifierAnnonce(@RequestBody Annonce A, @PathVariable Long id){
+		
+		
+		return annonceService.updateAnnonce(A);
+		
 		}
 
 	@PutMapping("/AcheterAnnonce/{idAnnonce}/{idUser}")
@@ -110,5 +106,23 @@ public class AnnonceController {
 	return annonceService.getUserFromAnnonce(idAnnonce);
 	}
 	
+	@GetMapping("/checkCoupon/{idAnnonce}")
+	public Long CheckCoupon(@PathVariable("idAnnonce") Long idAnnonce) {
+	return annonceService.checkCoupon(idAnnonce);
+	}
+	
+	@GetMapping("/FetchAnnonce/{id}")
+	public ResponseEntity<Annonce> FetchAnnonce(@PathVariable Long id){
+		Annonce A= annonceService.getAnnonce(id) ;
+		A.getImageVideo().forEach(i->{
+			im.delete(i);
+		});
+		return ResponseEntity.ok(A); //cast 
+		}
+	
+	@GetMapping("/verifEtatCoupon/{code}")
+	public Long verifEtatCoupon(@PathVariable("code") String code) {
+	return annonceService.verifEtatCoupon(code);
+	}
 }
 
