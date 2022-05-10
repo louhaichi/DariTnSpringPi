@@ -49,6 +49,12 @@ public class UserController {
 		User u =Userservice.getUserByUsername(username);
 		return ResponseEntity.ok(u);
 	}
+	@GetMapping("/usersFA/{id}")
+	public ResponseEntity<User> getUserByIdFromAnnonce(@PathVariable Long id) {
+		User u =Userservice.getUser(id);
+
+		return ResponseEntity.ok(u);
+	}
 	
 	@PutMapping("/users/{id}")
 	public ResponseEntity<User> updateUser(@PathVariable Long id,@RequestBody User u){
@@ -77,6 +83,12 @@ public class UserController {
 		UX.setImage(img);
 		User updateUser = Userservice.updateUser(UX);
 		return ResponseEntity.ok(updateUser);
+	}
+
+	@GetMapping("/usersid/{userid}")
+	public ResponseEntity<User> getUserByIdd(@PathVariable long userid) {
+		User u =Userservice.getUser(userid);
+		return ResponseEntity.ok(u);
 	}
 
 }
