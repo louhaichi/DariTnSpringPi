@@ -36,7 +36,6 @@ public class UserController {
 	public List<User> getAllUsers(){
 		return Userservice.getAllUsers();
 		
-		
 	}
 	
 	// create user 

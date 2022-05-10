@@ -30,7 +30,7 @@ public class RDVServiceIMPL implements RDVService {
 		User user= UserRepo.findById(IdUser).orElse(null);
 		u.setUser(user);
 		u.setAnnonce(annonce);
-		u.setDateRDV(new Date(System.currentTimeMillis()));
+		//u.setDateRDV(new Date(System.currentTimeMillis()));
 		return RDVRepo.save(u);
 	}
 
