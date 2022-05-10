@@ -19,9 +19,19 @@ public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
 	
 	
 
-	@Query(value="SELECT * FROM `annonce` WHERE  coupon_id IS NOT NULL",nativeQuery = true )
+	@Query(value="SELECT * FROM `annonce` WHERE  coupon_id IS NOT NULL ORDER BY coupon_id DESC ",nativeQuery = true )
 	List<Annonce> Annonces();	
 
 	@Query(value="SELECT user_id FROM Annonce a WHERE a.id=:idannonce",nativeQuery = true )
 	Long getUserFromAnnonce(Long idannonce);
+	
+	@Query(value="SELECT coupon_id FROM Annonce a WHERE a.id=:idannonce",nativeQuery = true )
+	Long checkCoupon(Long idannonce);
+
+	@Query(value="DELETE * FROM image_video WHERE annonce_id=:idannonce",nativeQuery = true )
+	void ReplaceImage(Long idannonce);
+	
+	@Query(value="SELECT `etat` FROM `coupon` WHERE `code`=:code",nativeQuery = true )
+	Boolean VerifEtatCoupon(String code);
+	
 }

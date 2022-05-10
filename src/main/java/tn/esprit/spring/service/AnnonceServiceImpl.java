@@ -113,9 +113,12 @@ public class AnnonceServiceImpl  implements AnnonceService {
 	
 	}
 
+	
+	
 	@Override
 	public void AffecterAnnonce(Long idAnnonce, String code) {
 		Coupon c = couponRepo.findByCode(code);
+		
 		Annonce a = annonceRepository.findById(idAnnonce).orElseThrow(null);
 		
 		a.setCoupon(c);
@@ -137,5 +140,21 @@ public class AnnonceServiceImpl  implements AnnonceService {
 	@Override
 	public Long getUserFromAnnonce(Long idannonce) {
 		return annonceRepository.getUserFromAnnonce(idannonce);
+	}
+	
+	@Override
+	public Long checkCoupon(Long idCoupon) {
+		if(annonceRepository.checkCoupon(idCoupon)>0) {
+			return annonceRepository.checkCoupon(idCoupon);
+		}
+		else return 0L;
+	}
+	
+	@Override
+	public Long verifEtatCoupon(String codeCoupon) {
+		if(annonceRepository.VerifEtatCoupon(codeCoupon)) {
+			return 1L;
+		}
+		else return 0L;
 	}
 }
