@@ -105,3 +105,7 @@
 2022-05-10 15:51:32.331 ERROR 432 --- [http-nio-8081-exec-1] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
 2022-05-10 15:51:33.858 ERROR 432 --- [http-nio-8081-exec-3] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
 2022-05-10 15:51:48.656 ERROR 432 --- [http-nio-8081-exec-4] t.e.s.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2022-05-10 21:17:27.169  INFO 432 --- [RMI TCP Connection(572)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-05-10 21:17:28.784  INFO 432 --- [RMI TCP Connection(572)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-10 21:17:28.990  INFO 432 --- [RMI TCP Connection(572)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-05-10 21:17:31.440  INFO 432 --- [RMI TCP Connection(572)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
