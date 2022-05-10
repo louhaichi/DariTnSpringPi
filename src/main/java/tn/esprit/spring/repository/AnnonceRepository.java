@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import tn.esprit.spring.entity.Annonce;
 
 @Repository
@@ -19,11 +20,13 @@ public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
 	
 	
 
+
 	@Query(value="SELECT * FROM `annonce` WHERE  coupon_id IS NOT NULL ORDER BY coupon_id DESC ",nativeQuery = true )
 	List<Annonce> Annonces();	
 
 	@Query(value="SELECT user_id FROM Annonce a WHERE a.id=:idannonce",nativeQuery = true )
 	Long getUserFromAnnonce(Long idannonce);
+
 	
 	@Query(value="SELECT coupon_id FROM Annonce a WHERE a.id=:idannonce",nativeQuery = true )
 	Long checkCoupon(Long idannonce);
@@ -34,4 +37,5 @@ public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
 	@Query(value="SELECT `etat` FROM `coupon` WHERE `code`=:code",nativeQuery = true )
 	Boolean VerifEtatCoupon(String code);
 	
+
 }
