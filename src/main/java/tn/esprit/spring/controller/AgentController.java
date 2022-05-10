@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.spring.service.AgentService;
 import tn.esprit.spring.entity.Agent;
+import tn.esprit.spring.service.AgentService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController

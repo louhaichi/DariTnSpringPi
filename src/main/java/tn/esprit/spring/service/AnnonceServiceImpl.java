@@ -11,7 +11,12 @@ import tn.esprit.spring.entity.Agent;
 import tn.esprit.spring.entity.Annonce;
 import tn.esprit.spring.entity.Coupon;
 import tn.esprit.spring.entity.User;
-import tn.esprit.spring.repository.*;
+import tn.esprit.spring.repository.AgentRepository;
+import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.CouponRepository;
+
+import tn.esprit.spring.repository.ImageVideoRepository;
+import tn.esprit.spring.repository.UserRepository;
 
 @Service
 public class AnnonceServiceImpl  implements AnnonceService {
@@ -108,9 +113,12 @@ public class AnnonceServiceImpl  implements AnnonceService {
 	
 	}
 
+	
+	
 	@Override
-	public void AffecterAnnonce(Long idAnnonce, Long idCoupon) {
-		Coupon c = couponRepo.findById(idCoupon).orElseThrow(null);
+	public void AffecterAnnonce(Long idAnnonce, String code) {
+		Coupon c = couponRepo.findByCode(code);
+		
 		Annonce a = annonceRepository.findById(idAnnonce).orElseThrow(null);
 		
 		a.setCoupon(c);
@@ -127,5 +135,26 @@ public class AnnonceServiceImpl  implements AnnonceService {
 		a.setAgent(ag);
 		annonceRepository.save(a);
 		
+	}
+	
+	@Override
+	public Long getUserFromAnnonce(Long idannonce) {
+		return annonceRepository.getUserFromAnnonce(idannonce);
+	}
+	
+	@Override
+	public Long checkCoupon(Long idCoupon) {
+		if(annonceRepository.checkCoupon(idCoupon)>0) {
+			return annonceRepository.checkCoupon(idCoupon);
+		}
+		else return 0L;
+	}
+	
+	@Override
+	public Long verifEtatCoupon(String codeCoupon) {
+		if(annonceRepository.VerifEtatCoupon(codeCoupon)) {
+			return 1L;
+		}
+		else return 0L;
 	}
 }

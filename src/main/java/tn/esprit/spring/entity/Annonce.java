@@ -2,6 +2,7 @@ package tn.esprit.spring.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -33,75 +34,73 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Annonce implements Serializable {
+public class Annonce implements Serializable{
 	private static final long serialVersionUID = 1L;
+	//testtt
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private long id;
+		private String titre;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String titre;
+		@Column(columnDefinition="TEXT")
+		private String description;
+		private String localisation;
+		private int nbchambre;
+		private double prix;
 
-	@Column(columnDefinition="TEXT")
-	private String description;
-	private String localisation;
-	private int nbchambre;
-	private double prix;
+		private Boolean disponibilite;
+		private double surface;
 
-	private Boolean disponibilite;
-	private double surface;
+		
+		
+		//@JsonIgnore
+			@OneToMany(mappedBy="annonce",cascade =CascadeType.REMOVE)
+			@JsonIgnoreProperties("annonce")
+			private Set<ImageVideo> imageVideo ;
+		
+		
+		
+		@JsonIgnore
+		@OneToOne
+		private Coupon coupon;
+		
+		@JsonIgnore
+		@OneToOne
+		private DariRoom room;
+		
+		@ManyToOne
+		User user;
+		
+		
+		@ManyToOne
+		User Acheteur;
+		@JsonIgnore
+		@ManyToOne 
+		Agent agent;
 
-	
-	
-	//@JsonIgnore
-		@OneToMany(mappedBy="annonce",cascade =CascadeType.REMOVE)
-		@JsonIgnoreProperties("annonce")
-		private Set<ImageVideo> imageVideo ;
-	
-	
-	
-	@JsonIgnore
-	@OneToOne
-	private Coupon coupon;
-	
-	@JsonIgnore
-	@OneToOne
-	private DariRoom room;
-	
-	@JsonIgnore
-	@ManyToOne
-	User user;
-	
-	@JsonIgnore
-	@ManyToOne
-	User Acheteur;
-	@JsonIgnore
-	@ManyToOne 
-	Agent agent;
+		@JsonIgnore
+		@OneToMany(cascade = CascadeType.ALL, mappedBy="annonce")
+		private Set<RDV> rdvs;
+		
+		@Enumerated(EnumType.STRING)
+		private TypeAnnonce typeAnnonce;
+		
+		@JsonBackReference(value="annonce")
+		public User getUser() {
+			return user;
+		}
 
-	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="annonce")
-	private Set<RDV> rdvs;
-	
-	@Enumerated(EnumType.STRING)
-	private TypeAnnonce typeAnnonce;
-	
-	@JsonBackReference(value="annonce")
-	public User getUser() {
-		return user;
-	}
+		public void setUser(User user) {
+			this.user = user;
+		}
+		@JsonBackReference(value="biens")
+		public User getAcheteur() {
+			return Acheteur;
+		}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-	@JsonBackReference(value="biens")
-	public User getAcheteur() {
-		return Acheteur;
-	}
-
-	public void setAcheteur(User acheteur) {
-		Acheteur = acheteur;
-	}
-
+		public void setAcheteur(User acheteur) {
+			Acheteur = acheteur;
+		}
 	
 	
 }

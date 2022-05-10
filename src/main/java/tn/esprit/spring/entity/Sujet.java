@@ -1,27 +1,14 @@
 package tn.esprit.spring.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import java.io.Serializable;
-import java.util.Date;
-import java.util.Set;
-import java.lang.String;
-
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "Sujet")
@@ -35,12 +22,14 @@ public class Sujet implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private String titre;
+	@Column(columnDefinition="TEXT")
 	private String description;
 	@Temporal(TemporalType.DATE)
 	private Date dateAjout;
 	private String image;
 	@ManyToOne
 	User user;
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="sujet")
 	private Set<Commentaire> commentaires;
 	

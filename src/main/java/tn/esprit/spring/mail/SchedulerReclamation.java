@@ -3,6 +3,7 @@ package tn.esprit.spring.mail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
 import tn.esprit.spring.entity.Reclamation;
 import tn.esprit.spring.entity.ReclamationStatus;
 import tn.esprit.spring.services.ReclamationService;
@@ -18,7 +19,9 @@ public class SchedulerReclamation {
     @Autowired
     private ReclamationService reclamationService;
 
-    @Scheduled(cron = "0 01 19 * * *")
+
+    @Scheduled(cron = "0 44 01 * * *")
+
     public void clotureReclamation(){
         System.out.println("------------------------ hehy ---------------------");
 

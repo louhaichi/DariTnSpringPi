@@ -13,7 +13,6 @@ import java.util.Properties;
 @EnableWebMvc
 @SpringBootApplication
 @EnableScheduling
-
 public class DariTnApplication {
 
 	public static void main(String[] args) {
@@ -38,7 +37,6 @@ public class DariTnApplication {
 		props.put("mail.debug", "true");
 
 		return mailSender;
-
 	}
 
 }

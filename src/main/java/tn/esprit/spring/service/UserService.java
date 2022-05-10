@@ -11,7 +11,7 @@ public interface UserService {
 	 void deleteUserById(Long id);
 	User getUserByUsername(String username);
 	User getUser(Long id);
+	void SetImageUser(Long id,String img);
 	
-
 	List<User> getAllUsers();
 }

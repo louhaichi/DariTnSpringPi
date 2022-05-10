@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Annonce;
+import tn.esprit.spring.entity.User;
 import tn.esprit.spring.repository.AnnonceRepository;
+import tn.esprit.spring.repository.ImageVideoRepository;
 import tn.esprit.spring.service.AnnonceService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -33,11 +35,18 @@ public class AnnonceController {
 	
 
 	@Autowired
+	private ImageVideoRepository im;
+	
+	@Autowired
 	private AnnonceRepository AR;
 	
 	@GetMapping("/AfficheAnnonce")
 	public List<Annonce> AfficheAnnonce (){
 		return annonceService.getAllAnnonces();
+		}
+	@GetMapping("/AfficheAnnonceCoupon")
+	public List<Annonce> AfficheAnnonceCoupon (){
+		return AR.Annonces();
 		}
 	
 	@PostMapping("/AjoutAnnonce/{idUser}")
@@ -53,19 +62,11 @@ public class AnnonceController {
 		}
 	
 	@PutMapping("/ModifierAnnonce/{id}")
-	public ResponseEntity<Annonce>  ModifierAnnonce(@RequestBody Annonce A, @PathVariable Long id){
-		Annonce Ax= annonceService.getAnnonce(id);
-		Ax.setDescription(A.getDescription());
-		Ax.setLocalisation(A.getLocalisation());
-		Ax.setNbchambre(A.getNbchambre());
-		Ax.setPrix(A.getPrix());
-		Ax.setTitre(A.getTitre());
-		Ax.setSurface(A.getSurface());
-
-		Ax.setDisponibilite(A.getDisponibilite());
-		Ax.setTypeAnnonce(A.getTypeAnnonce());
-		Annonce updateAnnonce= annonceService.updateAnnonce(Ax);
-		return ResponseEntity.ok(updateAnnonce);
+	public Annonce ModifierAnnonce(@RequestBody Annonce A, @PathVariable Long id){
+		
+		
+		return annonceService.updateAnnonce(A);
+		
 		}
 
 	@PutMapping("/AcheterAnnonce/{idAnnonce}/{idUser}")
@@ -74,11 +75,12 @@ public class AnnonceController {
 		
 	}
 	
-	@PutMapping("/AffecterCoupon/{idAnnonce}/{idCoupon}")
-	public void AffecterCoupon(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idCoupon") Long idCoupon) {
-		annonceService.AffecterAnnonce(idAnnonce, idCoupon);
+	@PutMapping("/AffecterCoupon/{idAnnonce}/{codeCoupon}")
+	public void AffecterCoupon(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("codeCoupon") String code) {
+		annonceService.AffecterAnnonce(idAnnonce, code);
 		
 	}
+		
 		
 	@PutMapping("/AffecterAgent/{idAnnonce}/{idAgent}")
 	public void AffecterAgent(@PathVariable("idAnnonce") Long idAnnonce, @PathVariable("idAgent") Long idAgent) {
@@ -99,5 +101,28 @@ public class AnnonceController {
 	return AR.AnnonceSimilaires(A.getLocalisation(),A.getPrix(),A.getNbchambre(),A.getTypeAnnonce().toString(),A.getId());
 	}
 	
+	@GetMapping("/getuserfromannonce/{idAnnonce}")
+	public Long getUserFromAnnonce(@PathVariable("idAnnonce") Long idAnnonce) {
+	return annonceService.getUserFromAnnonce(idAnnonce);
+	}
+	
+	@GetMapping("/checkCoupon/{idAnnonce}")
+	public Long CheckCoupon(@PathVariable("idAnnonce") Long idAnnonce) {
+	return annonceService.checkCoupon(idAnnonce);
+	}
+	
+	@GetMapping("/FetchAnnonce/{id}")
+	public ResponseEntity<Annonce> FetchAnnonce(@PathVariable Long id){
+		Annonce A= annonceService.getAnnonce(id) ;
+		A.getImageVideo().forEach(i->{
+			im.delete(i);
+		});
+		return ResponseEntity.ok(A); //cast 
+		}
+	
+	@GetMapping("/verifEtatCoupon/{code}")
+	public Long verifEtatCoupon(@PathVariable("code") String code) {
+	return annonceService.verifEtatCoupon(code);
+	}
 }
 

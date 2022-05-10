@@ -4,13 +4,14 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.interfaces.IReclamationService;
 import tn.esprit.spring.entity.Reclamation;
 import tn.esprit.spring.entity.ReclamationStatus;
-import tn.esprit.spring.interfaces.IReclamationService;
-import tn.esprit.spring.repository.ReclamationRepository;
 import tn.esprit.spring.mail.EmailServiceImpl;
+import tn.esprit.spring.repository.ReclamationRepository;
 
 
 @Service
@@ -35,6 +36,7 @@ public class ReclamationService implements IReclamationService {
 	@Override
 	public Reclamation updateReclamation(Reclamation r) {
 
+
 		if(r.getReponse() != null){
 			if (!r.getReponse().equals("") ) {
 				Reclamation reclamation = reclamationRepository.findById(r.getId()).orElse(null);
@@ -44,6 +46,7 @@ public class ReclamationService implements IReclamationService {
 				r.setStatus(ReclamationStatus.TRAITEE);
 
 			}
+
 
 		}
 		return reclamationRepository.save(r);
