@@ -86,4 +86,10 @@ public class UserController {
 		return ResponseEntity.ok(updateUser);
 	}
 
+	@GetMapping("/usersid/{userid}")
+	public ResponseEntity<User> getUserByIdd(@PathVariable long userid) {
+		User u =Userservice.getUser(userid);
+		return ResponseEntity.ok(u);
+	}
+
 }
