@@ -35,10 +35,18 @@ public class ReclamationService implements IReclamationService {
 
 	@Override
 	public Reclamation updateReclamation(Reclamation r) {
-		if (!r.getReponse().equals("") || r.getReponse() != null) {
-			Reclamation reclamation = reclamationRepository.findById(r.getId()).get();
-			this.emailService.sendSimpleMessage(reclamation.getUser().getEmail(), "reclamation numero " + r.getId(), r.getReponse());
-			r.setStatus(ReclamationStatus.TRAITEE);
+
+
+		if(r.getReponse() != null){
+			if (!r.getReponse().equals("") ) {
+				Reclamation reclamation = reclamationRepository.findById(r.getId()).orElse(null);
+				this.emailService.sendSimpleMessage(reclamation.getUser().getEmail(),
+						"reclamation numero " + r.getId(),
+						r.getReponse());
+				r.setStatus(ReclamationStatus.TRAITEE);
+
+			}
+
 
 		}
 		return reclamationRepository.save(r);
@@ -56,12 +64,12 @@ public class ReclamationService implements IReclamationService {
 	}
 
 	
-	//nhotouha fel scheduler moch fel controller
+	
 	@Override
 	public List<Reclamation> findFixedReclamations() {
 		return reclamationRepository.findAllByStatusEquals(ReclamationStatus.TRAITEE);
 	}
-	//nhotouha fel scheduler moch fel controller
+	
 	@Override
 	public List<Reclamation> saveAll(List<Reclamation> reclamations) {
 		return reclamationRepository.saveAll(reclamations);

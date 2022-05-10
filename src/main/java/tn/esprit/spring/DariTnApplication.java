@@ -26,7 +26,7 @@ public class DariTnApplication {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");
 		mailSender.setPort(587);
-
+		System.out.println("beaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaan");
 		mailSender.setUsername("daripicloud@gmail.com");
 		mailSender.setPassword("dari123?");
 
@@ -40,3 +40,7 @@ public class DariTnApplication {
 	}
 
 }
+
+
+
+//bonjour

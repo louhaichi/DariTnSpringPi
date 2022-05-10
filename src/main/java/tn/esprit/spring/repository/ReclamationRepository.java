@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public interface ReclamationRepository extends JpaRepository<Reclamation, Long> {
 
-	//queryDSL 
-	//findAllByStatusEquals dsl yefhemha 
+	
     List<Reclamation> findAllByStatusEquals(ReclamationStatus reclamationStatus);
 }
