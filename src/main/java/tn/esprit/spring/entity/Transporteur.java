@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,9 +38,11 @@ public class Transporteur implements Serializable {
 	EtatTranporteur etat;
 	
 	@OneToMany (cascade = CascadeType.ALL , mappedBy="transporteur")
+	@JsonIgnore
 	private Set<Demenagement> demenagements;
 	
-
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="transporteur")
+	private Set<Calendar> calendars;
 
 
 }
