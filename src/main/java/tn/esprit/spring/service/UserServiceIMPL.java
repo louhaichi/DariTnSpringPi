@@ -64,4 +64,15 @@ public void SetImageUser(Long id,String img) {
 	
 	
 }
+
+@Override
+public void deleteUserByid(Long id) {
+	UserRepo.deleteById(id);
+	
+}
+@Override
+public boolean FKuserroles(Long id) {
+	UserRepo.FKuserRoles(id);
+	return true;
+}
 }

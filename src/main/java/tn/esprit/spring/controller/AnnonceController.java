@@ -124,5 +124,14 @@ public class AnnonceController {
 	public Long verifEtatCoupon(@PathVariable("code") String code) {
 	return annonceService.verifEtatCoupon(code);
 	}
+	
+	@GetMapping("/AnnonceBooster")
+	public int AnnonceBooster() {
+	return annonceService.AnnonceBooster();
+	}
+	@GetMapping("/AnnonceNonBooster")
+	public int AnnonceNonBooster() {
+	return annonceService.AnnonceNonBooster();
+	}
 }
 

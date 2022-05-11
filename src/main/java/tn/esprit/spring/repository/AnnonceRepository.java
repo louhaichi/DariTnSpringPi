@@ -36,6 +36,11 @@ public interface AnnonceRepository extends JpaRepository<Annonce, Long> {
 	
 	@Query(value="SELECT `etat` FROM `coupon` WHERE `code`=:code",nativeQuery = true )
 	Boolean VerifEtatCoupon(String code);
+		
+	@Query(value="SELECT COUNT(*) FROM `annonce` WHERE coupon_id is not null",nativeQuery = true )
+	int AnnonceBooster();
 	
+	@Query(value="SELECT COUNT(*) FROM `annonce` WHERE coupon_id is  null",nativeQuery = true )
+	int AnnonceNonBooster();
 
 }

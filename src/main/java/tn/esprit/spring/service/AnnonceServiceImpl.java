@@ -157,4 +157,15 @@ public class AnnonceServiceImpl  implements AnnonceService {
 		}
 		else return 0L;
 	}
+@Override
+	public int AnnonceBooster() {
+		// TODO Auto-generated method stub
+		return annonceRepository.AnnonceBooster();
+	}
+@Override
+public int AnnonceNonBooster() {
+	// TODO Auto-generated method stub
+	return annonceRepository.AnnonceNonBooster();
 }
+}
+

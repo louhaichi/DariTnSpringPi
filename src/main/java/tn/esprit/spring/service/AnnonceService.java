@@ -17,4 +17,6 @@ public interface AnnonceService  {
 	Long getUserFromAnnonce(Long idannonce);
 	Long checkCoupon(Long idCoupon);
 	Long verifEtatCoupon(String code);
+	int AnnonceBooster();
+	int AnnonceNonBooster();
 }
