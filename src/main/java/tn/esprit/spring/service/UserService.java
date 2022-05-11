@@ -12,6 +12,7 @@ public interface UserService {
 	User getUserByUsername(String username);
 	User getUser(Long id);
 	void SetImageUser(Long id,String img);
-	
+	void deleteUserByid(Long id);
+	boolean FKuserroles(Long id);
 	List<User> getAllUsers();
 }
